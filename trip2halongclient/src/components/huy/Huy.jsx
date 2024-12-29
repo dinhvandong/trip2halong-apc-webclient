@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineDateRange } from "react-icons/md";
 import { PiBoatThin } from "react-icons/pi";
