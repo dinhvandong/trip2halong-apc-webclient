@@ -1,27 +1,18 @@
-<<<<<<< HEAD
-import React from 'react';
-import Quan from './components/quan/Quan';
+import React from 'react'
+import Kien from './components/kien/Kien'
+import Huy from './components/huy/Huy'
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Quan />
-    </div>
-  );
-}
-
-export default App;
-=======
-import Huy from "./components/huy/Huy";
-import Kien from "./components/kien/Kien";
-
-export default function App() {
-  return (
-    <div className="flex flex-col w-full h-auto">
+    <div className='flex flex-col '>
 
       <Kien/>
       <Huy/>
+      
+
+
     </div>
   )
 }
->>>>>>> 3cbed64 (xxx)
+
+export default App
