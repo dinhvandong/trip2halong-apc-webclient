@@ -2,6 +2,7 @@ import React from 'react'
 import Kien from './components/kien/Kien'
 import Huy from './components/huy/Huy'
 import Quan from './components/quan/Quan'
+import VuLong from './components/vulong/VuLong'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Huy/>
       <Quan/>
       <Quan/>
+      <VuLong/>
 
 
 
