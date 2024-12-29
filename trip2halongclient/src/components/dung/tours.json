@@ -1,0 +1,44 @@
+{
+    "pageTitle": "Trending Summer Tours in Halong Bay",
+    "subtitle": "It's here: Our ultimate list of places to experience",
+    "tours": [
+      {
+        "id": 1,
+        "highlights": [
+          "Kayaking through limestone caves",
+          "Swimming in hidden lagoons",
+          "Traditional lunch onboard"
+        ]
+      },
+      {
+        "id": 2,
+        "highlights": [
+          "Overnight on traditional junk boat",
+          "Sunset viewing",
+          "Morning Tai Chi"
+        ]
+      },
+      {
+        "id": 3,
+        "highlights": [
+          "Photography spots",
+          "Dinner cruise",
+          "Cave exploration"
+        ]
+      },
+      {
+        "id": 4,
+        "highlights": [
+          "Professional cave guide",
+          "Swimming opportunities",
+          "Light lunch included"
+        ]
+      }
+    ],
+    "settings": {
+      "slidesPerView": 4,
+      "autoplay": true,
+      "autoplayDelay": 3000,
+      "navigation": true
+    }
+  }
