@@ -1,7 +1,12 @@
-export default function App() {
+import React from 'react';
+import Quan from './components/quan/Quan';
+
+function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <div>
+      <Quan />
+    </div>
+  );
 }
+
+export default App;
