@@ -17,8 +17,8 @@ const Kien = () => {
   }, []);
   return (
     
-  <div className='h-auto'>
-  <header className='w-full bg-[#167dc8] h-[80px] flex'>
+  <div className='h-auto '>
+  <header className='w-full fixed top-0 left-0 right-0 z-50 bg-[#167dc8] h-[80px] flex'>
       <div className="w-1/2 h-full flex items-center">
           <img src={icon} className="ml-5 w-[100px] h-[50px]"/>
       </div>

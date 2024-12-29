@@ -14,9 +14,9 @@ const Toanbo = () => {
           { url: "https://static-images.vnncdn.net/files/publish/2022/7/27/ha-long-bay-1-852.jpg", alt: "Placeholder Image 5" },
         ];
   return (
-    <div className='flex flex-col w-full h-[400px] bg-cover bg-center relative bg-[url(https://vcdn1-dulich.vnecdn.net/2023/07/12/hl1-1689130193-1689130212-5586-1689130358.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=JDE3nuzFT6QKZqQ73hmZug)]'>
-        <div className='absolute w-full h-full bg-[#3C7FC4] opacity-95'></div>
-        <div className='absolute flex justify-end w-full h-full'>
+    <div className='flex  flex-col w-full h-[450px] bg-cover bg-center relative bg-[url(https://vcdn1-dulich.vnecdn.net/2023/07/12/hl1-1689130193-1689130212-5586-1689130358.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=JDE3nuzFT6QKZqQ73hmZug)]'>
+        <div className='absolute  w-full h-full bg-[#3C7FC4] opacity-95'></div>
+        <div className=' absolute flex justify-end w-full h-full'>
             <div className='flex flex-col w-[85%] h-full'>
                 <div className='w-full h-[30%] flex flex-row items-center'>
                     <p className='text-[33px] text-white font-bold leading-none'>Trending<span className='ml-1 mr-1 text-yellow-400'>Summer Tours</span>in Halong Bay<br/>

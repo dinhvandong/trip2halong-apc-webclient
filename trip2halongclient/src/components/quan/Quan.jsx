@@ -8,7 +8,7 @@ const Quan = () => {
 
   
   return (
-    <div className='flex flex-col w-full h-screen bg-[#F4F5F5]'>
+    <div className='flex flex-col w-full h-auto bg-[#F4F5F5]'>
       <div className='flex justify-between w-full px-40 pt-20'>
         <div className='flex flex-col'>
           <div className='flex'>
