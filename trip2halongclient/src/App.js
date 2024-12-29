@@ -2,13 +2,18 @@ import React from 'react'
 import Kien from './components/kien/Kien'
 import Huy from './components/huy/Huy'
 import Quan from './components/quan/Quan'
-import Toanbo from './components/Toanbobo/Toanbo'
+import VuLong from './components/vulong/VuLong'
 
 const App = () => {
   return (
     <div className='flex flex-col '>
 
-      <Toanbo/>
+      <Kien/>
+      <Huy/>
+      <Quan/>
+      <Quan/>
+      <VuLong/>
+
 
 
     </div>

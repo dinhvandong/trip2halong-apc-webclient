@@ -26,13 +26,19 @@ const VuLong = () => {
     </div>
 
     <div className="py-12 text-white bg-[#0E4772]">
-        <div className="max-w-6xl px-4 mx-auto">
-          <div className="flex items-start gap-8 mb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex w-full ">
+            <div className='w-[40%]'>
             <img src={logo} alt="Trip2 Halong Logo" className="w-[343px] h-[158px]"/>
-            <p className="max-w-lg pt-2 text-gray-300">
-              Figma ipsum component variant main layer. Flatten strikethrough effect community effect select slice. Style panel team list flows flows outline paneli. Plugin horizontal draft rotate overflow auto.
-            </p>
+
+            </div>
+            <div className='w-[60%]'>
+            <p className="text-justify text-gray-300">
+            Figma ipsum component variant main layer. Flatten strikethrough effect community effect select slice. Style pencil team list flows flows outline pencil. Plugin horizontal draft rotate overflow auto ipsum community frame. Community undo reesizing create connection draft. Component ellipse figjam auto style hand project object outline. Polygon inspect style vector figjam move. Component ellipse figjam auto style hand project object outline. Polygon inspect            </p>
           </div>
+            </div>
+            <div className='w-full h-[1px] bg-white mt-3 mb-2'></div>
+           
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div>
