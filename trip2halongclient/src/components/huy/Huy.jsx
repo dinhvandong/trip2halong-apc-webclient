@@ -9,7 +9,7 @@ const Huy = () => {
 
   return (
     <div>
-      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 lg:w-3/4 bg-[#1478C3] rounded-lg shadow-lg p-6">
+      <div className="absolute top-[800px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 lg:w-3/4 bg-[#1478C3] rounded-lg shadow-lg p-6">
         <h1 className="text-center text-2xl md:text-3xl font-bold text-white">
           Your Trip to Halong <span className="text-yellow-500">starts here</span>
         </h1>
@@ -66,7 +66,7 @@ const Huy = () => {
               </select>
             </div>
           </div>
-          <button className="bg-blue-700 text-white  px-3 py-3 rounded-md font-medium hover:bg-blue-800">
+          <button className="bg-[#187DCA] text-white  px-3 py-3 rounded-md font-medium hover:bg-blue-800">
             <IoSearchOutline />
           </button>
         </div>
@@ -75,7 +75,6 @@ const Huy = () => {
           Your World Heritage Journey Begins in a Click!
         </p>
       </div>
-      );
     </div>
   )
 }

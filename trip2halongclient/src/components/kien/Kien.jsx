@@ -1,7 +1,7 @@
 // rafce Kien to create class Kien
 import React, { useState, useEffect } from "react";
 import images from './image.json'
-import icon from './assets/icon_trip.jpg';
+import icon from './assets/trip_logo.png';
 import usa from './assets/USA.png';
 import { RiRefund2Line } from "react-icons/ri";
 import { PiUserCircleLight } from "react-icons/pi";
@@ -17,10 +17,10 @@ const Kien = () => {
   }, []);
   return (
     
-  <div className='h-[2000px]'>
+  <div className='h-auto'>
   <header className='w-full bg-[#167dc8] h-[80px] flex'>
-      <div className="w-1/2">
-          <img src={icon} className="h-10/12 mt-1 ml-7 scale-90"/>
+      <div className="w-1/2 h-full flex items-center">
+          <img src={icon} className="ml-5 w-[100px] h-[50px]"/>
       </div>
       <div className="w-1/2 h-full flex justify-start items-center">
       <button className="text-white font-semibold text-lg  w-1/5">Explore</button>
