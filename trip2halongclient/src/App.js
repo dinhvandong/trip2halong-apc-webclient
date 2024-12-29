@@ -1,10 +1,18 @@
-import React from 'react';
-import Dungcc from './components/dung/Dung';
+import React from 'react'
+import Kien from './components/kien/Kien'
+import Huy from './components/huy/Huy'
 
-export default function App() {
+const App = () => {
   return (
-    <div>
-      <Dungcc />
+    <div className='flex flex-col '>
+
+      <Kien/>
+      <Huy/>
+      
+
+
     </div>
-  );
+  )
 }
+
+export default App
