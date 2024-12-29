@@ -31,7 +31,7 @@ const GridWithSelect = () => {
        
 
       {/* Grid Container */}
-      <div className="grid grid-cols-11 gap-[400px]">
+      <div className="grid grid-cols-11 gap-[30%]">
       {paginatedData.map((item) => (
           <div
             key={item.id}
