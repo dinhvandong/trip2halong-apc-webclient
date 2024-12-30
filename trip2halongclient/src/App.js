@@ -4,6 +4,8 @@ import Huy from './components/huy/Huy'
 import Quan from './components/quan/Quan'
 import VuLong from './components/vulong/VuLong'
 import Toanbo from './components/Toanbobo/Toanbo'
+import Duc from './components/Duc/Duc'
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
       <Toanbo/>
       <Quan/>
       <Toanbo/>
+      <Duc/>
 
       <VuLong/>
 
