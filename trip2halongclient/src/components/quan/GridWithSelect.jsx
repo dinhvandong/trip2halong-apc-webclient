@@ -35,7 +35,7 @@ const GridWithSelect = () => {
       {paginatedData.map((item) => (
           <div
             key={item.id}
-            className="relative flex flex-col h-[340px] w-[350px] ml-40 mt-6 shadow-xl rounded-xl"
+            className="relative flex flex-col h-[340px] w-[350px]  mt-6 shadow-xl rounded-xl"
           >
              <div className="h-[55%] w-full relative">
                <img
