@@ -4,11 +4,13 @@ import Huy from './components/huy/Huy'
 import Quan from './components/quan/Quan'
 import VuLong from './components/vulong/VuLong'
 import Toanbo from './components/Toanbobo/Toanbo'
+import HaiLong from './components/hailong/HaiLong'
 
 const App = () => {
   return (
     <div className='flex flex-col '>
-
+      <HaiLong/>
+{/* 
       <Kien/>
       <Huy/>
       <Quan/>
@@ -16,7 +18,7 @@ const App = () => {
       <Quan/>
       <Toanbo/>
 
-      <VuLong/>
+      <VuLong/> */}
 
 
 
