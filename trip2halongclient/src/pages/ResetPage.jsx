@@ -1,18 +1,17 @@
 import React from 'react'
+import Reset from '../components/kien/Reset'
 import Kien from '../components/kien/Kien'
 import VuLong from '../components/vulong/VuLong'
-import Duc from '../components/duc/Duc'
 import Header from '../components/kien/Header'
 
-const SignUpPage = () => {
+const ResetPage = () => {
   return (
     <div className='w-full flex flex-col'>
-        <Header/>
-        <Duc/>
-        <VuLong/>
+    <Header/>
+    <Reset/>
+    <VuLong/>
 
-    </div>
-  )
+</div>  )
 }
 
-export default SignUpPage
+export default ResetPage

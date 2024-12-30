@@ -7,6 +7,7 @@ import Toanbo from './components/Toanbobo/Toanbo'
 import HomePage from './pages/HomePage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SignUpPage from './pages/SignUpPage'
+import ResetPage from './pages/ResetPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/sign-in" element={<SignUpPage />} />
       <Route path="/" element={<HomePage />} />
+      <Route path="/reset" element={<ResetPage />} />
 
       </Routes>
       </BrowserRouter>
