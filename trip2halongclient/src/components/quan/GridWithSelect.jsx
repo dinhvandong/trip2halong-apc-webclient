@@ -1,75 +1,104 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
+import travelData from "./travel.json";
+
 
 const GridWithSelect = () => {
-    const [data, setData] = useState([]);
-    const [rows] = useState(3); // Default rows per page
-    const [currentPage, setCurrentPage] = useState(1);
-  
-    useEffect(() => {
-      // Fetch data from the JSON file
-      fetch("/travel.json")
-        .then((response) => response.json())
-        .then((json) => setData(json));
-    }, []);
-  
-    const totalPages = Math.ceil(data.length / rows);
-  
-    // Get data for the current page
-    const paginatedData = data.slice((currentPage - 1) * rows, currentPage * rows);
-  
-  
-    const handlePageChange = (page) => {
-        if (page >= 1 && page <= totalPages) {
-          setCurrentPage(page);
-        }
-      };
-  
+  const [data, setData] = useState([]);
+  const [rows] = useState(3); // Default rows per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const [direction, setDirection] = useState(""); // Track slide direction ("left" or "right")
+  const [isSliding, setIsSliding] = useState(false); // Manage sliding animation
+
+  useEffect(() => {
+    // Fetch data from the JSON file
+    fetch("/travel.json")
+      .then((response) => response.json())
+      .then((json) => setData(json));
+  }, []);
+
+  const totalPages = Math.ceil(travelData.length / rows);
+
+  // Get data for the current page
+  const paginatedData = travelData.slice((currentPage - 1) * rows, currentPage * rows);
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      const slideDirection = page > currentPage ? "right" : "left";
+      setDirection(slideDirection);
+      setIsSliding(true); // Start sliding
+
+      setTimeout(() => {
+        setCurrentPage(page); // Update the page
+        setIsSliding(false); // Reset sliding after animation
+      }, 300); // Duration of the sliding animation
+    }
+  };
 
   return (
     <div className="p-6 bg-gray-100">
-       
+      {/* Grid Container with Slide Effect */}
+      <div
+        className={`relative overflow-hidden`}
+      >
+        <div
+          className={`grid grid-cols-3 gap-6 transition-transform duration-300 transform ${
+            isSliding
+              ? direction === "right"
+                ? "translate-x-full"
+                : "-translate-x-full"
+              : "translate-x-0"
+          }`}
+        >
+          {paginatedData.map((item) => (
+            <div
+              key={item.id}
+              className="relative flex flex-col h-[340px] w-[350px] mx-auto mt-6 shadow-xl rounded-xl"
+            >
+              <div className="h-[55%] w-full relative">
+                <img
+                  src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5Jvtj9EuAkxb60gxgDT0mhlH4WZ5iu9mrpVb3BM8_ck9yh1cx"
+                  alt="halong"
+                  className="h-full w-full object-cover rounded-xl"
+                />
+                <div className="flex font-light absolute top-3 left-3 bg-[#157DC8] text-white text-sm px-4 py-2 rounded-3xl">
+                  From<div className="font-medium ml-1">USD 180</div>
+                </div>
+              </div>
+              <div className="flex ml-5 mt-3">
+                <FaStar className="w-[10px] h-[10px] text-[#FDB007]" />
+                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
+                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
+                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
+                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
+                <div className="flex justify-center items-center w-6 h-3 py-1 bg-[#FDB007] ml-1">
+                  <p className="font-medium text-white text-[8px]">4.5/s</p>
+                </div>
+              </div>
 
-      {/* Grid Container */}
-      <div className="grid grid-cols-11 gap-[30%]">
-      {paginatedData.map((item) => (
-          <div
-            key={item.id}
-            className="relative flex flex-col h-[340px] w-[350px]  mt-6 shadow-xl rounded-xl"
-          >
-             <div className="h-[55%] w-full relative">
-               <img
-                src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5Jvtj9EuAkxb60gxgDT0mhlH4WZ5iu9mrpVb3BM8_ck9yh1cx"
-                alt="halong"
-                className="h-full w-full object-cover rounded-xl"
-               />
-               <div className="flex font-light absolute top-3 left-3  bg-[#157DC8] text-white text-sm px-4 py-2 rounded-3xl">
-                  From<div className='font-medium ml-1'>USD 180</div> 
-               </div>
-      
-             </div>
-             <div className='flex ml-5 mt-3'>
-                      <FaStar className='w-[10px] h-[10px] text-[#FDB007] '/>
-                      <FaStar className='w-[10px] h-[10px] text-[#FDB007] ml-[3px]'/>
-                      <FaStar className='w-[10px] h-[10px] text-[#FDB007] ml-[3px]'/>
-                      <FaStar className='w-[10px] h-[10px] text-[#FDB007] ml-[3px]'/>
-                      <FaStar className='w-[10px] h-[10px] text-[#FDB007] ml-[3px]'/>
-                      <div className='flex justify-center items-center w-6 h-3 py-1 bg-[#FDB007] ml-1'>
-                        <p className='font-medium text-white text-[8px] '>4,5/s</p>
-                      </div>
+              {/* Title and Subtitle */}
+              <div className="flex ml-5">
+                <p className="font-bold text-[21px]">
+                  {item.title}
+                  <span className="font-bold text-[21px] -mt-2 ml-1">
+                    {item.subtitle}
+                  </span>
+                </p>
+              </div>
+              <div className="flex flex-col ml-5 leading-[1.2]">
+                <p className="font-normal text-[13.5px] font-sans text-[#A5A9AA]">
+                  Figma ipsum component variant main layer. Move
+                </p>
+                <p className="font-normal text-[13.5px] font-sans text-[#A5A9AA]">
+                  boolean vertical duplicate layer bullet. Prototype
+                </p>
+                <p className="font-normal text-[13.5px] font-sans text-[#A5A9AA]">
+                  align distribute bold resizing.
+                </p>
+              </div>
             </div>
-
-            {/* Title and Subtitle */}
-            <div className='flex ml-5 '>
-              <p className='font-bold  text-[21px]'>{item.title}<p className='font-bold  text-[21px] -mt-2'>{item.subtitle}</p></p>
-            </div>
-            <div className='flex flex-col ml-5 leading-[1.2]'>
-              <p className='font-normal text-[13.5px] font-sans text-[#A5A9AA]'>Figma ipsum component variant main layer. Move</p>
-              <p className='font-normal text-[13.5px] font-sans text-[#A5A9AA]'>boolean vertical duplicate layer bullet. Prototype</p>
-              <p className='font-normal text-[13.5px] font-sans text-[#A5A9AA]'>align distribute bold ressizing.</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Pagination Controls */}
@@ -109,7 +138,6 @@ const GridWithSelect = () => {
           &gt;
         </button>
       </div>
-
     </div>
   );
 };
