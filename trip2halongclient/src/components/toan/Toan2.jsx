@@ -24,8 +24,13 @@ const Toan2 = () => {
       [checkboxId]: !prevState[checkboxId],
     }));
   };
+  const [liked, setLiked] = useState(false);
+
+  const handleHeartClick = () => {
+    setLiked(!liked);
+  };
   return (
-    <div className='relative flex flex-row w-full mt-4 h-max'>
+    <div className='relative flex flex-row w-full px-4 mb-6 bg-gray-200 h-max'>
       <div className='flex flex-col w-1/4 h-screen mr-4'>
         <div className='w-full h-[160px] flex flex-col p-2 rounded-md bg-white'>
           <button className='flex justify-between font-bold'>Recent Filter<span className='text-blue-400'>Clear</span></button>
@@ -43,8 +48,8 @@ const Toan2 = () => {
             className="w-full h-4 mt-2 bg-blue-500 rounded-lg cursor-pointer"
           />
           <div className='flex flex-row items-center justify-between mt-2'>
-            <button className='h-[30px] bg-white border rounded-lg text-[12px] border-gray-300 font-bold w-[80px]'>USD 150</button>
-            <button className='h-[30px] bg-white border rounded-lg text-[12px] border-gray-300 font-bold w-[80px]'>USD 1500</button>
+            <button className='h-[30px] bg-white border rounded-lg text-[12px] hover:bg-blue-200 hover:text-blue-500 border-gray-300 font-bold w-[80px]'>USD 150</button>
+            <button className='h-[30px] bg-white border rounded-lg text-[12px] hover:bg-blue-200 hover:text-blue-500 border-gray-300 font-bold w-[80px]'>USD 1500</button>
           </div>
         </div>
         <div className='w-full h-[160px] bg-white p-2 mt-2 rounded-md flex flex-col'>
@@ -121,11 +126,11 @@ const Toan2 = () => {
       </div>
       <div className='flex flex-col w-3/4 h-max'>
         {Toanba.map((tte) => (
-          <div key={tte.id} className='w-full h-[230px] flex flex-row rounded-lg border border-gray-300 bg-white'>
-            <img src={tte.img} alt={tte.img} className='w-1/3 h-full bg-cover rounded-l-lg'></img>
+          <div key={tte.id} className='w-full h-[230px] mt-4 flex flex-row rounded-lg border border-gray-300 bg-white'>
+            <img src={tte.img} alt={tte.img} className='w-[320px] h-full bg-cover bg-center rounded-l-lg'></img>
             <div className='w-[70%] h-full p-3 flex flex-col'>
               <div className='w-full h-[50px] flex flex-row'>
-                <p className='text-[20px] font-bold leading-none '>{tte.text1}<br/>{tte.text}</p>
+                <p className='text-[20px] font-bold leading-none '>{tte.text1}<br />{tte.text}</p>
                 <button className='w-[100px] h-[30px] text-[13px] ml-3 rounded-xl text-yellow-500 bg-yellow-100 border border-yellow-300'>{tte.text2}</button>
               </div>
               <p className='text-[13px] flex flex-row text-blue-600 items-center font-bold'><PiControlFill className='w-3 h-3 text-blue-600'></PiControlFill>{tte.text3} <span className='underline'>Show on map</span></p>

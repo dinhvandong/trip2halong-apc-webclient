@@ -18,10 +18,10 @@ const App = () => {
     <BrowserRouter>
     <Routes>
       {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/home" element={<HomePage/>} />
       <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/sign-in" element={<SignUpPage />} />
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<BookingPage/>} />
       <Route path="/reset" element={<ResetPage />} />
       <Route path="/booking" element={<BookingPage />} />
 
