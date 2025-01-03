@@ -11,7 +11,7 @@ const Toan = () => {
   const [isMostPopupla, setMostPopupla] = useState(false);
   const [isTotalPrice, setTotalPrice] = useState(false);
   return (
-    <div className='w-full flex items-center justify-between h-[100px]'>
+    <div className='w-full flex items-center justify-between h-[100px] bg-gray-200 px-4'>
       <p className="text-black text-[25px] flex flex-col leading-none">HaLong Bay Day Cruise<span className="font-bold text-[20px]">20 results found</span></p>
       <div className="w-[35%] h-full flex items-center justify-between flex-row">
         <p className="text-gray-500">Sort by</p>
@@ -23,7 +23,7 @@ const Toan = () => {
             <ul className="absolute left-0 z-50 w-40 mt-2 bg-white shadow-sm rounded-xl">
               {Toan1.map((item) => (
                 <li key={item.id}
-                  className="p-2 cursor-pointer hover:bg-gray-200"
+                  className="p-2 rounded-lg cursor-pointer hover:bg-slate-400"
                   onClick={() => {
                     item.log(item.name);
                   }}>{item.name}
@@ -41,7 +41,7 @@ const Toan = () => {
             <ul className="absolute left-0 z-50 w-40 mt-2 bg-white shadow-sm rounded-xl">
               {Toanb.map((itemn) => (
                 <li key={itemn.id}
-                  className="p-2 cursor-pointer hover:bg-gray-200"
+                  className="p-2 rounded-lg cursor-pointer hover:bg-slate-400"
                   onClick={() => {
                     itemn.log(itemn.name);
                   }}>{itemn.name}

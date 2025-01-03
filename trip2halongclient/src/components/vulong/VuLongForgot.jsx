@@ -4,8 +4,15 @@ import usalogo from './assets/usalogo.png'
 import { RiRefund2Line } from "react-icons/ri";
 import { PiUserCircleLight } from "react-icons/pi";
 import kye from './assets/key_icon.png';
+import { useNavigate } from 'react-router-dom';
 
 const VuLongForgot = () => {
+    const navigate = useNavigate();
+
+    const gotoResetPassword = ()=>{
+
+          navigate('/reset-password');
+    }
     return (
         <div className='flex flex-col w-full h-auto'>
             <header className='w-full fixed top-0 left-0 right-0 z-50 bg-[#167dc8] h-auto md:h-[65px] flex flex-col md:flex-row'>
@@ -29,7 +36,7 @@ const VuLongForgot = () => {
                     <p className="mb-6 text-sm text-center text-gray-500">
                         No worries, we'll send a reset link to your email.
                     </p>
-                    <form className="flex flex-col justify-center w-full">
+                    <form onSubmit={gotoResetPassword} className="flex flex-col justify-center w-full">
                         <p className='text-[15px] text-black ml-3'>Email:</p>
                         <input
                             type="text"
