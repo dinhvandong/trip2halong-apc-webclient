@@ -12,6 +12,7 @@ import BookingPage from './pages/BookingPage'
 import AboutPage from './pages/AboutPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
+import CreateAccountPage from './pages/CreateAccountPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -31,6 +32,7 @@ const App = () => {
       <Route path="/" element={<HomePage/>} />
       <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
       <Route path="/reset-password" element={<ResetPasswordPage/>} />
+      <Route path="/create-account" element={<CreateAccountPage/>} />
 
 
 
