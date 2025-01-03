@@ -1,6 +1,6 @@
 import React from 'react'
 import Kien from './components/kien/Kien'
-import Huy from './components/huy/Huy'
+import Huy from './components/huy/CreateAccount/CreateAccount'
 import Quan from './components/quan/Quan'
 import VuLong from './components/vulong/VuLong'
 import Toanbo from './components/Toanbobo/Toanbo'
