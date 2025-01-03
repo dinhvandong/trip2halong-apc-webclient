@@ -7,11 +7,11 @@ import { HiListBullet } from "react-icons/hi2";
 import { HiMiniSquares2X2 } from "react-icons/hi2";
 
 
-const Toan = () => {
+const Toan = ({ setViewMode })  => {
   const [isMostPopupla, setMostPopupla] = useState(false);
   const [isTotalPrice, setTotalPrice] = useState(false);
   return (
-    <div className='w-full flex items-center justify-between h-[100px] bg-gray-200 px-4'>
+    <div className='w-full flex items-center justify-between h-[100px] bg-gray-200 px-16'>
       <p className="text-black text-[25px] flex flex-col leading-none">HaLong Bay Day Cruise<span className="font-bold text-[20px]">20 results found</span></p>
       <div className="w-[35%] h-full flex items-center justify-between flex-row">
         <p className="text-gray-500">Sort by</p>
@@ -51,8 +51,16 @@ const Toan = () => {
           )}
         </div>
         <p className="text-gray-500">View</p>
-        <button className='w-[30px] h-[30px] flex justify-center items-center text-blue-400 rounded-md hover:text-white bg-white border border-blue-400 hover:bg-blue-700'><HiListBullet/></button>
-        <button className='w-[30px] h-[30px] flex justify-center items-center text-blue-400 rounded-md hover:text-white bg-white border border-blue-400 hover:bg-blue-700'><HiMiniSquares2X2/></button>
+        <button
+          onClick={() => setViewMode('grid')}
+          className='w-[30px] h-[30px] flex justify-center items-center text-blue-400 rounded-md hover:text-white bg-white border border-blue-400 hover:bg-blue-700'>
+          <HiMiniSquares2X2 />
+        </button>
+        <button
+          onClick={() => setViewMode('list')}
+          className='w-[30px] h-[30px] flex justify-center items-center text-blue-400 rounded-md hover:text-white bg-white border border-blue-400 hover:bg-blue-700'>
+          <HiListBullet />
+        </button>
       </div>
     </div>
   )
