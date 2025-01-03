@@ -16,8 +16,6 @@ const HomePage = () => {
             <Quan />
             <Toanbo />
             <VuLong />
-            <AboutUs/>
-
         </div>
     )
 }

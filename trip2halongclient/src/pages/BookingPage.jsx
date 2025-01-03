@@ -12,9 +12,6 @@ const BookingPage = () => {
             <Kien />
             <Toan/>
             <Toan2/>
-           
-            
-           
             <Footer />
 
         </div>
