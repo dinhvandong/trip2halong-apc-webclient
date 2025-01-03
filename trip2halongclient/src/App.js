@@ -1,6 +1,6 @@
 import React from 'react'
 import Kien from './components/kien/Kien'
-import Huy from './components/huy/Huy'
+import Huy from './components/huy/CreateAccount/CreateAccount'
 import Quan from './components/quan/Quan'
 import VuLong from './components/vulong/VuLong'
 import Toanbo from './components/Toanbobo/Toanbo'
@@ -12,7 +12,7 @@ import BookingPage from './pages/BookingPage'
 import AboutPage from './pages/AboutPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
-import Signin from './components/dung/SignIn'
+import CreateAccountPage from './pages/CreateAccountPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -32,7 +32,8 @@ const App = () => {
       <Route path="/" element={<HomePage/>} />
       <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
       <Route path="/reset-password" element={<ResetPasswordPage/>} />
-      <Route path="/Signin" element={<Signin/>} />
+      <Route path="/create-account" element={<CreateAccountPage/>} />
+
 
 
 
