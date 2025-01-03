@@ -6,7 +6,7 @@ import Toanba from "./toanba.json";
 import { PiControlFill } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa";
 
-const Toan2 = () => {
+const Toan2 = ({ viewMode }) => {
   const [value, setValue] = useState(50);
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -26,11 +26,8 @@ const Toan2 = () => {
   };
   const [liked, setLiked] = useState(false);
 
-  const handleHeartClick = () => {
-    setLiked(!liked);
-  };
   return (
-    <div className='relative flex flex-row w-full px-4 mb-6 bg-gray-200 h-max'>
+    <div className='relative flex flex-row w-full mb-6 bg-gray-200 px-14 h-max'>
       <div className='flex flex-col w-1/4 h-screen mr-4'>
         <div className='w-full h-[160px] flex flex-col p-2 rounded-md bg-white'>
           <button className='flex justify-between font-bold'>Recent Filter<span className='text-blue-400'>Clear</span></button>
@@ -124,36 +121,42 @@ const Toan2 = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col w-3/4 h-max'>
+      <div className={`flex flex-col w-3/4 h-max ${viewMode === 'grid' ? 'grid grid-cols-3 gap-4' : ''}`}>
         {Toanba.map((tte) => (
-          <div key={tte.id} className='w-full h-[230px] mt-4 flex flex-row rounded-lg border border-gray-300 bg-white'>
-            <img src={tte.img} alt={tte.img} className='w-[320px] h-full bg-cover bg-center rounded-l-lg'></img>
-            <div className='w-[70%] h-full p-3 flex flex-col'>
-              <div className='w-full h-[50px] flex flex-row'>
-                <p className='text-[20px] font-bold leading-none '>{tte.text1}<br />{tte.text}</p>
-                <button className='w-[100px] h-[30px] text-[13px] ml-3 rounded-xl text-yellow-500 bg-yellow-100 border border-yellow-300'>{tte.text2}</button>
+          <div
+            key={tte.id}
+            className={`w-full h-auto mt-4 flex ${viewMode === 'grid' ? 'flex-col items-center' : 'flex-row'} rounded-lg border border-gray-300 bg-white`}
+          >
+            <img
+              src={tte.img}
+              alt={tte.img}
+              className={`${viewMode === 'grid' ? 'w-full h-[150px] bg-cover bg-center rounded-t-lg' : 'w-[320px] bg-center h-[230px] rounded-l-lg'
+                }`}
+            />
+            <div className={`${viewMode === 'grid' ? 'p-2' : 'p-3 flex flex-col'}`}>
+              <p className='text-[20px] font-bold flex flex-row leading-none'>{tte.text1}<br />
+                {tte.text}
+                <button className='w-[100px] ml-3 h-[35px] text-[10px] text-yellow-400 bg-yellow-100 border border-yellow-400 rounded-xl'>{tte.text2}</button>
+              </p>
+              <p className='flex flex-row text-[12px] text-blue-400 mt-1'><PiControlFill className='w-4 h-4 text-blue-400'></PiControlFill>{tte.text3}<span className='ml-1 underline'>Show on map</span></p>
+              <div className='flex flex-row items-center mt-2 text-yellow-400' style={{ display: 'flex', gap: '1px' }}>
+                {Array(5).fill(null).map((_, index) => (
+                  <RiStarSFill key={index}/>
+                ))}
+                <button className='w-[40px] h-[20px] text-white text-center text-[10px] bg-yellow-400'>ART</button>
+                <p className='text-gray-500 text-[15px]'>{tte.text4}</p>
               </div>
-              <p className='text-[13px] flex flex-row text-blue-600 items-center font-bold'><PiControlFill className='w-3 h-3 text-blue-600'></PiControlFill>{tte.text3} <span className='underline'>Show on map</span></p>
-              <div className='w-full h-[30px] flex flex-row items-center'>
-                <RiStarSFill className='w-5 h-5 text-yellow-400'></RiStarSFill>
-                <RiStarSFill className='w-5 h-5 text-yellow-400'></RiStarSFill>
-                <RiStarSFill className='w-5 h-5 text-yellow-400'></RiStarSFill>
-                <RiStarSFill className='w-5 h-5 text-yellow-400'></RiStarSFill>
-                <RiStarSFill className='w-5 h-5 text-yellow-400'></RiStarSFill>
-                <button className='w-[45px] h-[23px] bg-yellow-500 text-[10px] ml-1 text-white'>{tte.text7}</button>
-                <p className='text-[15px] text-gray-400 ml-1'>{tte.text4}</p>
-              </div>
-              <p className='text-[15px] text-gray-600'>{tte.text5}</p>
-            </div>
-            <div className='w-[1px] h-full bg-gray-200'></div>
-            <div className='w-[30%] h-full flex flex-col items-end p-3 bg-white rounded-r-lg'>
-              <FaRegHeart className='flex w-5 h-5'></FaRegHeart>
-              <div className='w-full h-[40%]'></div>
-              <p className='text-[20px] text-blue-500 font-bold'>{tte.text6}</p>
-              <p className='text-[10px] mt-2 text-gray-500'>{tte.text8}</p>
-              <button className='w-[80%] h-[45px] mt-2 bg-blue-700 text-white rounded-lg'>See availability</button>
-            </div>
 
+              <p className='text-[16px] mt-4 text-gray-600'>{tte.text5}</p>
+            </div>
+            {viewMode !== 'grid' && <div className='w-[1px] h-full bg-gray-200'></div>}
+            <div className={`${viewMode === 'grid' ? 'hidden' : 'w-[350px] h-[230px] flex flex-col items-end p-3 bg-white rounded-r-lg'}`}>
+              <FaRegHeart className='w-4 h-4'></FaRegHeart>
+              <div className='w-full h-[50%]'></div>
+              <p className='text-[20px] text-blue-500 font-bold leading-none'>{tte.text6}</p>
+              <span className='text-[10px] text-gray-500'>{tte.text8}</span>
+              <button className='w-[95%] h-[45px] mt-2 bg-blue-700 text-white text-[13px] rounded-lg'>See availability</button>
+            </div>
           </div>
         ))}
       </div>

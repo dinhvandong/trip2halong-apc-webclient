@@ -5,14 +5,14 @@ import Header from '../components/kien/Header'
 import Footer from '../components/vulong/Footer'
 import Toan2 from '../components/toan/Toan2'
 import Toan from '../components/toan/Toan'
+import MainComponent from '../components/toan/MainComponent'
 
 const BookingPage = () => {
     return (
-        <div className='flex flex-col '>
+        <div className='flex flex-col bg-gray-200 '>
             <Kien />
-            <Toan/>
-            <Toan2/>
-            <Footer />
+           <MainComponent/>
+            <Footer/>
 
         </div>
     )

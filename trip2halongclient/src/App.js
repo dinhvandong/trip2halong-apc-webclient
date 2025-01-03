@@ -13,6 +13,7 @@ import AboutPage from './pages/AboutPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import CreateAccountPage from './pages/CreateAccountPage'
+import MainComponent from './components/toan/MainComponent'
 // import Duc from './components/Duc/Duc'
 
 
@@ -33,10 +34,6 @@ const App = () => {
       <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
       <Route path="/reset-password" element={<ResetPasswordPage/>} />
       <Route path="/create-account" element={<CreateAccountPage/>} />
-
-
-
-
       </Routes>
       </BrowserRouter>
     // <div className='flex flex-col '>
