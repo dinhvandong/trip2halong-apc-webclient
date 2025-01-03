@@ -4,6 +4,7 @@ import Huy from '../components/huy/Huy'
 import Quan from '../components/quan/Quan'
 import Toanbo from '../components/Toanbobo/Toanbo'
 import VuLong from '../components/vulong/VuLong'
+import AboutUs from '../components/quan/AboutUs'
 
 const HomePage = () => {
     return (
@@ -15,6 +16,7 @@ const HomePage = () => {
             <Quan />
             <Toanbo />
             <VuLong />
+            <AboutUs/>
 
         </div>
     )
