@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 
-const SignInPage = () => {
+const SignInX = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,8 +12,8 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-md px-4 mx-auto mt-16">
+    <div className="min-h-screen  bg-white">
+      <div className="max-w-md px-4 mx-auto mt-[100px]">
         <h1 className="mb-2 text-2xl font-semibold text-center text-gray-700">
           Sign in your account
         </h1>
@@ -95,4 +95,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignInX;
