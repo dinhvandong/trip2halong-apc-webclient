@@ -1,17 +1,20 @@
 import React from 'react'
 import halong1 from './assets/halong1.jpg';
 import halong2 from './assets/halong2.jpg';
+import logo from '../vulong/assets/logotriphalong.jpg';
+
 
 import { TfiEye } from "react-icons/tfi";
 import { CiStar } from "react-icons/ci";
+import { HiOutlineUserGroup } from "react-icons/hi";
 
 
 const AboutUs = () => {
   return (
-    <div className='flex flex-col items-center w-full h-auto bg-[#F4F5F5]'>
+    <div className='mt-48 flex flex-col items-center w-full h-auto  bg-[#F4F5F5]'>
       <p className='font-bold text-5xl py-12 '>About us</p>
 
-      <div class="grid grid-cols-2  py-8">
+      <div class="grid grid-cols-2 w-full  ">
         {/* Top Left Section - Our Mission */}
         <div class="bg-[#2896E5] py-16 px-24 text-white flex flex-col justify-center items-start">
           <p class="text-6xl font-bold text-yellow-400 py-8 ml-6">Our Mission</p>
@@ -58,11 +61,9 @@ const AboutUs = () => {
       <p className='font-bold text-5xl py-12 text-[#2281CD]'>
         Our Values
       </p>
-      <div className='flex justify-between   w-[80%] h-auto pb-12'>
+      <div className='flex justify-between  w-[80%] h-auto pb-12'>
         <div className='flex flex-col items-center px-11 py-10 bg-[#E5F2FB] border-2 border-[#A2C9E0] rounded-2xl'>
-          <img src="https://img.freepik.com/premium-vector/vector-design-small-group-icon-style_1134108-107419.jpg?w=740"
-          alt='people'
-          className='w-24 h-24 object-cover'/>
+          <HiOutlineUserGroup className='w-20 h-20 text-[#2073C3] mt-2'/>
           <p className='flex flex-col items-center font-bold text-4xl text-[#2281CD] py-6'>Values to
             <p>Community</p>
           </p>    
@@ -139,7 +140,79 @@ const AboutUs = () => {
         </div>      
       </div>
 
+      <div className="flex flex-col items-center w-full h-auto pt-20">
+    <div className="w-full">
+    <div className="w-full px-4 py-4 bg-[#FFB700]">
+      <div className="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto sm:flex-row">
+        <h2 className="text-2xl font-bold text-white whitespace-nowrap">Let's Stay In Touch</h2>
+        <div className="flex w-full max-w-2xl"> 
+          <input
+            type="email"
+            placeholder="Enter Your Email to Subscribe"
+            className="flex-1 w-full px-4 py-2 focus:outline-none"
+          />
+          <button className="px-6 py-2 font-semibold text-white transition-colors border border-white bg-[#FFB700] whitespace-nowrap">
+            SUBSCRIBE
+          </button>
+        </div>
+      </div>
     </div>
+
+    <div className="py-12  text-white bg-[#0E4772]">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex w-full ">
+            <div className='w-[40%]'>
+            <img src={logo} alt="Trip2 Halong Logo" className="w-[343px] h-[158px]"/>
+
+            </div>
+            <div className='w-[60%]'>
+            <p className="text-justify text-gray-300">
+            Figma ipsum component variant main layer. Flatten strikethrough effect community effect select slice. Style pencil team list flows flows outline pencil. Plugin horizontal draft rotate overflow auto ipsum community frame. Community undo reesizing create connection draft. Component ellipse figjam auto style hand project object outline. Polygon inspect style vector figjam move. Component ellipse figjam auto style hand project object outline. Polygon inspect            </p>
+          </div>
+            </div>
+            <div className='w-full h-[1px] bg-white mt-3 mb-2'></div>
+           
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-blue-400 hover:text-white">ABOUT US</a></li>
+                <li><a href="#" className="text-blue-400 hover:text-white">FAQs</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-blue-400 hover:text-white">DESTINATIONS</a></li>
+                <li><a href="#" className="text-blue-400 hover:text-white">TRIPS</a></li>
+                <li><a href="#" className="text-blue-400 hover:text-white">NEWS</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="mb-4 text-lg font-bold text-blue-400">Community</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-300 hover:text-white">Blogs</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Videos</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Podcasts</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="mb-4 text-lg font-bold text-blue-400">Grow Your Business</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-300 hover:text-white">Partner with Trip2Halong</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white">Advertisement</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     </div> 
+
+    </div>
+    
     
   )
 }
