@@ -45,7 +45,7 @@ const CreateAccount = () => {
 
 
     return (
-        <div className='h-screen'>
+        <div className='mt-16 mb-8'>
             <div className='max-w-[60%] m-auto pt-5'>
                 <h1 className='text-center text-lg font-semibold text-neutral-900'>Create an account</h1>
                 <p className='text-center text-sm text-slate-700'>Create your trip2 account to access your services</p>
