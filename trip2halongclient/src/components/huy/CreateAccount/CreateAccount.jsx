@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaRegEyeSlash } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { FaAngleDown } from "react-icons/fa";
 
 const CreateAccount = () => {
 
@@ -13,6 +14,36 @@ const CreateAccount = () => {
     const toggleBusinessInfo = () => {
         setShowBusinessInfo(!showBusinessInfo);
     };
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedCountry, setSelectedCountry] = useState({
+        name: 'Vietnam',
+        code: '+84',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png',
+    });
+
+    const countries = [
+        {
+            name: 'Vietnam',
+            code: '+84',
+            flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png',
+        },
+        {
+            name: 'USA',
+            code: '+1',
+            flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png',
+        },
+    ];
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const handleCountrySelect = (country) => {
+        setSelectedCountry(country);
+        setIsDropdownOpen(false);
+    };
+
+
     return (
         <div className=''>
             <div className='max-w-[60%] m-auto pt-5'>
@@ -46,12 +77,47 @@ const CreateAccount = () => {
                         <div className='flex-1'>
                             <h5 className='text-[13px] font-semibold mb-2 text-neutral-900 mt-1'>Phone Number<span className='text-red-500'>*</span></h5>
 
-                            <div className='flex '>
-                                <select className=' w-full py-1 px-3 shadow-inner font-semibold text-sm w-20 bg-gray-100'>
-                                    <option >
-                                        <img style={{ width: '100%' }} src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png' alt='vietnam' /> +84</option>
-                                </select>
-                                <input className='shadow-inner  w-full text-sm py-2 px-1 pl-2' placeholder='012 345 6789' />
+                            <div className="flex items-center">
+                                {/* Dropdown */}
+                                <div className="relative">
+                                    <button
+                                        onClick={toggleDropdown}
+                                        className="py-2 px-3 shadow-inner font-semibold text-sm w-24 bg-gray-100 flex items-center "
+                                    >
+                                        <img
+                                            className="w-5 h-4 mr-1"
+                                            src={selectedCountry.flag}
+                                            alt={selectedCountry.name}
+                                        />
+                                        <span className='flex'>{selectedCountry.code} <FaAngleDown className='ml-1 pt-1 text-lg' /></span>
+                                        
+                                    </button>
+
+                                    {isDropdownOpen && (
+                                        <div className="absolute mt-1 bg-white shadow-lg rounded w-40">
+                                            {countries.map((country) => (
+                                                <div
+                                                    key={country.code}
+                                                    className="p-2 hover:bg-gray-100 flex items-center cursor-pointer"
+                                                    onClick={() => handleCountrySelect(country)}
+                                                >
+                                                    <img
+                                                        className="w-5 h-5 mr-2"
+                                                        src={country.flag}
+                                                        alt={country.name}
+                                                    />
+                                                    <span>{country.name} ({country.code})</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Input */}
+                                <input
+                                    className="shadow-inner w-full text-sm py-2 px-1 pl-2 "
+                                    placeholder="012 345 6789"
+                                />
                             </div>
 
                         </div>
@@ -116,74 +182,109 @@ const CreateAccount = () => {
                     </span>
                 </label>
                 {showBusinessInfo && (
-                <div className='shadow-md bg-white px-5 my-5 '>
-                    <h3 className='font-semibold text-neutral-900'>Business information</h3>
-                    <p className='text-slate-700 text-sm'>please provide your business information as per your business registered licence.</p>
-                    <p className='text-slate-700 text-sm pb-4 '>"Please use English charater only"</p>
-                    <hr />
-                    <div className='flex  mt-3 px-2'>
-                        <div className='flex-1'>
-                            <h5 className='text-[13px] font-semibold mb-2 text-neutral-900'>Country<span className='text-red-500'>*</span></h5>
-                            <select className=' w-full text-sm py-2 px-1 pl-2 border-gray-300 rounded-md shadow-sm font-semibold '>
-                                <option>Vietnam</option>
-                            </select>
-                        </div>
-
-                        <div className='flex-1 '>
-                            <h5 className='text-[13px] font-semibold mb-2 text-neutral-900'>Business Name<span className='text-red-500'>*</span></h5>
-                            <input placeholder="Enter your Business's name"
-                                className=' w-full text-[13px] py-2 px-1 pl-2 border-gray-300  rounded-md shadow-sm ' />
-                        </div>
-                    </div>
-                    <div className='flex  mt-3'>
-
-                        <div className=' px-3'>
-                            <h5 className='text-[13px] font-semibold mb-2 text-neutral-900'>Busoness owner<span className='text-red-500'>*</span></h5>
-                            <select className=' w-[115px] text-[13px] py-2 px-1 pl-2 border-gray-300 rounded-md shadow-sm font-semibold'>
-                                <option>Mr</option>
-                                <option>Ms</option>
-                            </select>
-                        </div>
-                        <div className='flex-1 '>
-
-                            <input placeholder='Jont Smith'
-                                className='mt-7 w-full text-sm py-2 px-1 pl-2 border-gray-300 rounded-md shadow-sm ' />
-                        </div>
-                    </div>
-                    <div className='flex mt-2 px-2'>
-                        <div className='flex-1 px-3 '>
-                            <h5 className='text-[13px] font-semibold mb-2 mt-1'>Title<span className='text-red-500'>*</span></h5>
-                            <input className='shadow-inner  w-full text-sm py-2 px-1 pl-2' placeholder='Founder' />
-                        </div>
-                        <div className='flex-1'>
-                            <h5 className='text-[13px] font-semibold mb-2 text-neutral-900 mt-1'>Phone Number<span className='text-red-500'>*</span></h5>
-
-                            <div className='flex '>
-                                <select className=' w-full py-1 px-3 shadow-inner font-semibold text-sm w-20 bg-gray-100'>
-                                    <option >
-                                        <img style={{ width: '100%' }} src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png' alt='vietnam' /> +84</option>
+                    <div className='shadow-md bg-white px-5 my-5 '>
+                        <h3 className='font-semibold text-neutral-900'>Business information</h3>
+                        <p className='text-slate-700 text-sm'>please provide your business information as per your business registered licence.</p>
+                        <p className='text-slate-700 text-sm pb-4 '>"Please use English charater only"</p>
+                        <hr />
+                        <div className='flex  mt-3 px-2'>
+                            <div className='flex-1'>
+                                <h5 className='text-[13px] font-semibold mb-2 text-neutral-900'>Country<span className='text-red-500'>*</span></h5>
+                                <select className=' w-full text-sm py-2 px-1 pl-2 border-gray-300 rounded-md shadow-sm font-semibold '>
+                                    <option>Vietnam</option>
                                 </select>
-                                <input className='shadow-inner  w-full text-sm py-2 px-1 pl-2' placeholder='012 345 6789' />
                             </div>
 
+                            <div className='flex-1 '>
+                                <h5 className='text-[13px] font-semibold mb-2 text-neutral-900'>Business Name<span className='text-red-500'>*</span></h5>
+                                <input placeholder="Enter your Business's name"
+                                    className=' w-full text-[13px] py-2 px-1 pl-2 border-gray-300  rounded-md shadow-sm ' />
+                            </div>
+                        </div>
+                        <div className='flex  mt-3'>
+
+                            <div className=' px-3'>
+                                <h5 className='text-[13px] font-semibold mb-2 text-neutral-900'>Busoness owner<span className='text-red-500'>*</span></h5>
+                                <select className=' w-[115px] text-[13px] py-2 px-1 pl-2 border-gray-300 rounded-md shadow-sm font-semibold'>
+                                    <option>Mr</option>
+                                    <option>Ms</option>
+                                </select>
+                            </div>
+                            <div className='flex-1 '>
+
+                                <input placeholder='Jont Smith'
+                                    className='mt-7 w-full text-sm py-2 px-1 pl-2 border-gray-300 rounded-md shadow-sm ' />
+                            </div>
+                        </div>
+                        <div className='flex mt-2 px-2'>
+                            <div className='flex-1 px-3 '>
+                                <h5 className='text-[13px] font-semibold mb-2 mt-1'>Title<span className='text-red-500'>*</span></h5>
+                                <input className='shadow-inner  w-full text-sm py-2 px-1 pl-2' placeholder='Founder' />
+                            </div>
+                            <div className='flex-1'>
+                                <h5 className='text-[13px] font-semibold mb-2 text-neutral-900 mt-1'>Phone Number<span className='text-red-500'>*</span></h5>
+
+                                <div className="flex items-center">
+                                {/* Dropdown */}
+                                <div className="relative">
+                                    <button
+                                        onClick={toggleDropdown}
+                                        className="py-2 px-3 shadow-inner font-semibold text-sm w-24 bg-gray-100 flex items-center "
+                                    >
+                                        <img
+                                            className="w-5 h-4 mr-1"
+                                            src={selectedCountry.flag}
+                                            alt={selectedCountry.name}
+                                        />
+                                        <span className='flex'>{selectedCountry.code} <FaAngleDown className='ml-1 pt-1 text-lg' /></span>
+                                        
+                                    </button>
+
+                                    {isDropdownOpen && (
+                                        <div className="absolute mt-1 bg-white shadow-lg rounded w-40">
+                                            {countries.map((country) => (
+                                                <div
+                                                    key={country.code}
+                                                    className="p-2 hover:bg-gray-100 flex items-center cursor-pointer"
+                                                    onClick={() => handleCountrySelect(country)}
+                                                >
+                                                    <img
+                                                        className="w-5 h-5 mr-2"
+                                                        src={country.flag}
+                                                        alt={country.name}
+                                                    />
+                                                    <span>{country.name} ({country.code})</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Input */}
+                                <input
+                                    className="shadow-inner w-full text-sm py-2 px-1 pl-2 "
+                                    placeholder="012 345 6789"
+                                />
+                            </div>
+
+                            </div>
+
+
                         </div>
 
+                        <div className=' pb-4 '>
+                            <label className="block text-sm font-medium text-gray-700 my-2 px-3">
+                                Business License <span className="text-red-500">*</span>
+                            </label>
+                            <div className="border-dashed border rounded-md mt-1 p-3">
+                                <input type="file" className="text-sm text-gray-600 pt-10 " />
 
-                    </div>
-
-                    <div className=' pb-4 '>
-                        <label className="block text-sm font-medium text-gray-700 my-2 px-3">
-                            Business License <span className="text-red-500">*</span>
-                        </label>
-                        <div className="border-dashed border rounded-md mt-1 p-3">
-                            <input type="file" className="text-sm text-gray-600 pt-10 "   />
-                           
-                        </div>
-                        <p className="mt-2 text-xs text-black">
+                            </div>
+                            <p className="mt-2 text-xs text-black">
                                 Upload <span className='font-medium'>JPG, PNG, PDF</span> only
                             </p>
-                    </div>
-                </div>)}
+                        </div>
+                    </div>)}
                 <label className="inline-flex items-center w-full">
                     <input
                         type="checkbox"
