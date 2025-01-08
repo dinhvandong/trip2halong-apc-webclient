@@ -5,7 +5,7 @@ import Duc from '../components/duc/Duc'
 import Header from '../components/kien/Header'
 import Footer from '../components/vulong/Footer'
 
-const SignUpPage = () => {
+const SignInPage = () => {
   return (
     <div className='w-full flex flex-col'>
         <Header/>

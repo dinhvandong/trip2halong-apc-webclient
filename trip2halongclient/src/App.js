@@ -14,6 +14,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import MainComponent from './components/toan/MainComponent'
+import SignInPage from './pages/SignInPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -25,7 +26,7 @@ const App = () => {
       {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
       <Route path="/home" element={<HomePage/>} />
       <Route path="/sign-up" element={<SignUpPage />} />
-      <Route path="/sign-in" element={<SignUpPage />} />
+      <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/booking" element={<BookingPage/>} />
       <Route path="/reset" element={<ResetPage />} />
       <Route path="/booking" element={<BookingPage />} />

@@ -46,7 +46,7 @@ const CreateAccount = () => {
 
     return (
         <div className='mt-16 mb-8'>
-            <div className='max-w-[60%] m-auto pt-5'>
+            <div className='md:max-w-[800px] w-full m-auto pt-5'>
                 <h1 className='text-center text-lg font-semibold text-neutral-900'>Create an account</h1>
                 <p className='text-center text-sm text-slate-700'>Create your trip2 account to access your services</p>
                 <div className='shadow-md bg-white px-5 mt-5'>
@@ -133,7 +133,7 @@ const CreateAccount = () => {
                             <span className='text-red-500'>*</span>
                         </h5>
                         <div className='flex border rounded-md items-center'>
-                            <p className='w-[130px] text-sm pl-3 font-semibold'>Your Password</p>
+                            <p className='w-[150px] text-sm pl-3 font-semibold'>Your Password</p>
                             <input
                                 className='shadow-inner w-full text-sm py-2 px-1 pl-2'
                                 type={showPassword ? 'text' : 'password'}
@@ -168,7 +168,7 @@ const CreateAccount = () => {
                     </div>
                 </div>
             </div>
-            <div className='max-w-[60%] m-auto pt-5'>
+            <div className='md:max-w-[800px] w-full m-auto pt-5'>
 
 
                 <label className="inline-flex items-center w-full">
