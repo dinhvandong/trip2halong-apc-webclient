@@ -5,8 +5,14 @@ import { RiStarSFill } from "react-icons/ri";
 import Toanba from "./toanba.json";
 import { PiControlFill } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Toan2 = ({ viewMode }) => {
+  const navigate = useNavigate();
+  
+  const gotonext = () => {
+    navigate('/toandfg')
+  }
   const [value, setValue] = useState(50);
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -130,6 +136,7 @@ const Toan2 = ({ viewMode }) => {
             <img
               src={tte.img}
               alt={tte.img}
+              onClick={gotonext}
               className={`${viewMode === 'grid' ? 'w-full h-[150px] bg-cover bg-center rounded-t-lg' : 'w-[320px] bg-center h-[230px] rounded-l-lg'
                 }`}
             />

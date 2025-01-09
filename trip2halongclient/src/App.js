@@ -15,6 +15,8 @@ import ResetPasswordPage from './pages/ResetPasswordPage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import MainComponent from './components/toan/MainComponent'
 import SignInPage from './pages/SignInPage'
+import SignInEmailandPassword from './pages/SignInEmailandPassword'
+import FaQPage from './pages/FaQPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -27,10 +29,14 @@ const App = () => {
       <Route path="/home" element={<HomePage/>} />
       <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/sign-in" element={<SignInPage />} />
+      <Route path="/sign-in-with-email-password" element={<SignInEmailandPassword />} />
+
       <Route path="/booking" element={<BookingPage/>} />
       <Route path="/reset" element={<ResetPage />} />
       <Route path="/booking" element={<BookingPage />} />
       <Route path="/about" element={<AboutPage/>} />
+      <Route path="/faq" element={<FaQPage/>} />
+
       <Route path="/" element={<HomePage/>} />
       <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
       <Route path="/reset-password" element={<ResetPasswordPage/>} />
