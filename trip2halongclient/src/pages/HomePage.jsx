@@ -5,17 +5,20 @@ import Quan from '../components/quan/Quan'
 import Toanbo from '../components/Toanbobo/Toanbo'
 import VuLong from '../components/vulong/VuLong'
 import AboutUs from '../components/quan/AboutUs'
+import HaiLong from '../components/vulong/HaiLong'
+import Footer from '../components/vulong/Footer'
 
 const HomePage = () => {
     return (
-        <div className='flex flex-col '>
+        <div className='flex flex-col items-center '>
             <Kien />
             <Huy />
             <Quan />
             <Toanbo />
             <Quan />
             <Toanbo />
-            <VuLong />
+            <HaiLong/>
+            <Footer />
         </div>
     )
 }

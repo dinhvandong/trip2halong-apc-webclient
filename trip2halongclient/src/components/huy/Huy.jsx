@@ -13,25 +13,29 @@ const Huy = () => {
         <h1 className="text-center text-2xl md:text-3xl font-bold text-white">
           Your Trip to Halong <span className="text-yellow-500">starts here</span>
         </h1>
-        <div className="absolute top-[22%] right-[11%] mt-4 items-center flex justify-center text-sm font-semibold font-md:text-base text-white bg-slate-800  rounded-lg p-1">
-          <button className='flex  py-3 px-5 rounded-full transition duration-300  hover:bg-slate-700 hover:border-slate-300 border border-transparent'>
-          <PiBoatThin className="mr-2 text-white text-base mt-[3px]" />
-          Day & Dinner Crise
-          </button>
-          <button className='flex  py-3 px-5 rounded-full  transition duration-300  hover:bg-slate-700 hover:border-slate-300 border border-transparent '>
-          <PiBoatThin className="mr-2 text-white text-base mt-[3px] " />
-            Day & Dinner Crise
-          </button >
-          <button className='flex  py-3 px-5 rounded-full transition duration-300 hover:bg-slate-700 hover:border-slate-300 border border-transparent'>
-            <LuTickets className="mr-2 text-white text-base mt-[3px] "/>
-            Day & Dinner Crise
-          </button>
-          <button className='flex  py-3 px-5 rounded-full transition duration-300  hover:bg-slate-700 hover:border-slate-300 border border-transparent'>
-            <MdTour className="mr-2 text-white text-base mt-[3px] "/>
-            Day & Dinner Crise
-          </button>
+        <div className='w-full flex justify-center'>
+          <div className="absolute top-[22%] mt-4 items-center flex justify-center text-sm font-semibold font-md:text-base text-white bg-slate-800  rounded-lg p-1">
+            <button className='flex  py-3 px-5 rounded-full transition duration-300  hover:bg-slate-700 hover:border-slate-300 border border-transparent'>
+              <PiBoatThin className="mr-2 text-white text-base mt-[3px]" />
+              Day & Dinner Cruise
+            </button>
+            <button className='flex  py-3 px-5 rounded-full  transition duration-300  hover:bg-slate-700 hover:border-slate-300 border border-transparent '>
+              <PiBoatThin className="mr-2 text-white text-base mt-[3px] " />
+              Overnight Cruise
+            </button >
+            <button className='flex  py-3 px-5 rounded-full transition duration-300 hover:bg-slate-700 hover:border-slate-300 border border-transparent'>
+              <LuTickets className="mr-2 text-white text-base mt-[3px] " />
+              Attraction Ticket
+            </button>
+            <button className='flex  py-3 px-5 rounded-full transition duration-300  hover:bg-slate-700 hover:border-slate-300 border border-transparent'>
+              <MdTour className="mr-2 text-white text-base mt-[3px] " />
+              Tours & Combos
+            </button>
+
+          </div>
 
         </div>
+
         <div className=" static mt-[45px]  mt-6 flex flex-wrap items-center gap-4 bg-white pt-10 pb-5 px-5 rounded-lg">
           <div className="flex-1">
 

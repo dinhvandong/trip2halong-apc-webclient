@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const SignInX = () => {
+const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    navigate('/home')
+
     // Handle sign in logic here
   };
 
@@ -95,4 +100,4 @@ const SignInX = () => {
   );
 };
 
-export default SignInX;
+export default SignInForm;

@@ -4,7 +4,6 @@ import VuLong from '../components/vulong/VuLong'
 import Duc from '../components/duc/Duc'
 import Header from '../components/kien/Header'
 import Footer from '../components/vulong/Footer'
-import SignInX from '../components/dung/SignIn'
 import CreateAccount from '../components/huy/CreateAccount/CreateAccount'
 
 const SignUpPage = () => {
@@ -17,5 +16,4 @@ const SignUpPage = () => {
     </div>
   )
 }
-
 export default SignUpPage

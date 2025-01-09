@@ -1,7 +1,21 @@
 import React from 'react'
 import logo from './assets/logotriphalong.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+
+  const gotoAboutPage = ()=>{
+    navigate('/about')
+  }
+
+
+  const gotoFaQPage = ()=>{
+    navigate('/faq')
+  }
+
+
   return (
     <footer className="w-full">
     <div className="w-full px-4 py-4 bg-[#FFB700]">
@@ -38,8 +52,8 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div>
               <ul className="space-y-2">
-                <li><a href="#" className="text-blue-400 hover:text-white">ABOUT US</a></li>
-                <li><a href="#" className="text-blue-400 hover:text-white">FAQs</a></li>
+                <li><a onClick={gotoAboutPage} href="#" className="text-blue-400 hover:text-white">ABOUT US</a></li>
+                <li><a onClick={gotoFaQPage} href="#" className="text-blue-400 hover:text-white">FAQs</a></li>
               </ul>
             </div>
 

@@ -5,6 +5,10 @@ const Duc = () => {
 
   const navigate = useNavigate();
 
+  const gotoLoginEmailPassword = ()=>{
+
+    navigate('/sign-in-with-email-password');
+  }
 
   const gotoSignUp =()=>{
 
@@ -32,7 +36,7 @@ const Duc = () => {
       </div>
 
       <div>
-        <button className="w-full  md:w-[600px] py-2 font-semibold mt-4 text-white bg-blue-500 transition-colors border border-white  whitespace-nowrap">
+        <button onClick={gotoLoginEmailPassword} className="w-full  md:w-[600px] py-2 font-semibold mt-4 text-white bg-blue-500 transition-colors border border-white  whitespace-nowrap">
           Continue with Email
         </button>
       </div>

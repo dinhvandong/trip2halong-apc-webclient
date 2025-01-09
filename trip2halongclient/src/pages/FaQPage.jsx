@@ -5,16 +5,18 @@ import Huy from '../components/huy/Huy'
 import AboutUs from '../components/quan/AboutUs'
 import HaiLong from '../components/vulong/HaiLong'
 import Footer from '../components/vulong/Footer'
+import FaQ from '../components/FaQ'
 
-const AboutPage = () => {
+const FaQPage = () => {
   return (
     <div className='flex flex-col '>
     <Kien />
     <Huy />
-    <AboutUs/>
+    <FaQ/>
     <Footer />
 </div>
   )
 }
 
-export default AboutPage
+
+export default FaQPage

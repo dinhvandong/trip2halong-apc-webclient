@@ -7,7 +7,6 @@ const VuLong = () => {
   return (
     
     <div className="flex flex-col items-center w-full h-auto">
-      <HaiLong/>
     <footer className="w-full">
     <div className="w-full px-4 py-4 bg-[#FFB700]">
       <div className="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto sm:flex-row">
