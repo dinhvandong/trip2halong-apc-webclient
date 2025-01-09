@@ -1,9 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Duc = () => {
+
+  const navigate = useNavigate();
+
+
+  const gotoSignUp =()=>{
+
+    navigate('/sign-up')
+  }
+
   return (
     <div className='bg-slate-100 w-full items-center flex flex-col mt-[50px] h-screen'>
-      <div className='text-center font-bold mt-[80px] text-2xl text-gray-700'>
+      <div  className='hover:cursor-pointer text-center font-bold mt-[80px] text-2xl text-gray-700'>
         <h1>Sign in or create an account</h1>
       </div>
       <div className='text-center'>
@@ -28,7 +38,7 @@ const Duc = () => {
       </div>
       <div className='flex justify-items-center '>
         <h1 className='mt-3 '>Don't Have an Acount ?</h1>
-        <button className='ml-[10px] mt-3 text-blue-600 underline underline-offset-1'>
+        <button onClick={gotoSignUp} className='ml-[10px] mt-3 text-blue-600 underline underline-offset-1'>
           Sign Up
         </button>
       </div>

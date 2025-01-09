@@ -14,9 +14,9 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import MainComponent from './components/toan/MainComponent'
-import ToanUpdate from './pages/ToanUpdate';
-import Toandfg from './pages/Toandfg';
-
+import SignInPage from './pages/SignInPage'
+import SignInEmailandPassword from './pages/SignInEmailandPassword'
+import FaQPage from './pages/FaQPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -28,13 +28,15 @@ const App = () => {
       {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
       <Route path="/home" element={<HomePage/>} />
       <Route path="/sign-up" element={<SignUpPage />} />
-      <Route path="/sign-in" element={<SignUpPage />} />
+      <Route path="/sign-in" element={<SignInPage />} />
+      <Route path="/sign-in-with-email-password" element={<SignInEmailandPassword />} />
+
       <Route path="/booking" element={<BookingPage/>} />
       <Route path="/reset" element={<ResetPage />} />
       <Route path="/booking" element={<BookingPage />} />
       <Route path="/about" element={<AboutPage/>} />
-      <Route path="/toanad" element={<ToanUpdate/>} />
-      <Route path="/toandfg" element={<Toandfg/>} />
+      <Route path="/faq" element={<FaQPage/>} />
+
       <Route path="/" element={<HomePage/>} />
       <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
       <Route path="/reset-password" element={<ResetPasswordPage/>} />
