@@ -4,7 +4,8 @@ import all from './all.json';
 import { MdFlagCircle } from "react-icons/md";
 
 
-const AllNewOne = () => {
+
+const Allnew3 = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handlePrev = () => {
@@ -19,24 +20,20 @@ const AllNewOne = () => {
             setCurrentIndex((prevIndex) => prevIndex + 1);
         }
     };
-
-
-
-    return (
-        <div className='flex flex-col w-full h-auto bg-white'>
-            <div className='w-full h-[200px]'></div>
-            <div className='flex flex-col w-full h-auto pb-8 bg-gray-200'>
-                <div className='flex flex-row w-full justify-center items-center h-[100px]'>
-                    <p className='text-[35px] text-blue-500 font-bold'>Hot Travel News</p>
-                    <div className='w-[58%] h-[70px] flex flex-row items-center justify-end'>
+  return (
+    <div className='flex flex-col w-full h-auto bg-white'>
+            <div className='flex flex-col w-full h-auto pb-8 bg-[#353C3B]'>
+                <div className='flex flex-row w-full justify-center items-center h-[100px] '>
+                    <p className='text-[35px] text-white font-bold'>Best of Halong Destination</p>
+                    <div className='w-[48%] h-[70px] flex flex-row items-center justify-end'>
                         <button
-                            className='w-[40px] h-[40px] text-blue-500 flex justify-center items-center rounded-md border border-blue-500'
+                            className='w-[40px] h-[40px] text-white flex justify-center items-center rounded-md border border-white'
                             onClick={handlePrev}
                         >
                             <FiChevronLeft />
                         </button>
                         <button
-                            className='w-[40px] h-[40px] ml-1 text-blue-500 flex justify-center items-center rounded-md border border-blue-500'
+                            className='w-[40px] h-[40px] ml-1 text-white flex justify-center items-center rounded-md border border-white'
                             onClick={handleNext}
                         >
                             <FiChevronRight />
@@ -67,18 +64,16 @@ const AllNewOne = () => {
                                     <p className='text-[13px] mt-2 text-black leading-none'>{item.text2}</p>
                                 </div>
                                 <div className='flex flex-row justify-between w-full h-auto p-2 mt-2'>
-                                    <p className='text-[11px] text-black font-medium flex flex-row items-center'><MdFlagCircle className='w-5 h-5 text-blue-600'></MdFlagCircle>Trip2Halong * <span className='text-gray-400'>Dec-22-2024</span></p>
+                                    <p className='text-[11px] text-black font-medium flex flex-row items-center'><MdFlagCircle className='w-5 h-5 text-[#353C3B]'></MdFlagCircle>Trip2Halong * <span className='text-gray-400'>Dec-22-2024</span></p>
                                     <button className='px-3 py-2 text-[10px] font-medium bg-gray-200 rounded-lg text-black'>5 mins read</button>
                                 </div>
-
-
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
         </div>
-    )
+  )
 }
 
-export default AllNewOne
+export default Allnew3

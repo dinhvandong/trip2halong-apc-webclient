@@ -1,24 +1,35 @@
 [
     {
-      "title": "Vịnh Hạ Long",
-      "description": "Vịnh Hạ Long - Di sản thiên nhiên thế giới.",
-      "image": "https://static-images.vnncdn.net/files/publish/2022/7/27/ha-long-bay-1-852.jpg",
-      "buttonText": "Explore More",
-      "icon": "heart"
+      "text": "Top 6 travel trends for 2025",
+      "text2": "Figma ipsum component varlant main layer.Rectangle slice polygon ellipse component. Export thumbnail frame strikethough figjam vertical creact. 4 lines max",
+      "image": "https://static-images.vnncdn.net/files/publish/2022/7/27/ha-long-bay-1-852.jpg"
     },
     {
-      "title": "Nha Trang",
-      "description": "Cảnh biển xanh ngắt tại Nha Trang.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU33bZQlZZK2loOw-Ghq384roHamtC1s1AZ8k3xDl7CBj_vp3STiqZpmmuKzPRduEmu4U&usqp=CAU",
-      "buttonText": "Discover",
-      "icon": "heart"
+      "text": "Quang Ninh forcaeast",
+      "text2": "Figma ipsum component varlant main layer.Rectangle slice polygon ellipse component. Export thumbnail frame strikethough figjam vertical creact. 4 lines max",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU33bZQlZZK2loOw-Ghq384roHamtC1s1AZ8k3xDl7CBj_vp3STiqZpmmuKzPRduEmu4U&usqp=CAU"
     },
     {
-      "title": "Đà Nẵng",
-      "description": "Đà Nẵng - Thành phố đáng sống nhất Việt Nam.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBh-CQleCMH20vWjPlavrDGi6TOE_0IRtzFUkE_Fq3tXePMqjwKfTPTrtOXL1SaVTdiiU&usqp=CAU",
-      "buttonText": "Learn More",
-      "icon": "heart"
+      "text": "Top 6 travel trends for 2025",
+      "text2": "Figma ipsum component varlant main layer.Rectangle slice polygon ellipse component. Export thumbnail frame strikethough figjam vertical creact. 4 lines max",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBh-CQleCMH20vWjPlavrDGi6TOE_0IRtzFUkE_Fq3tXePMqjwKfTPTrtOXL1SaVTdiiU&usqp=CAU"
+    },
+    {
+      "text": "Top 6 travel trends for 2025",
+      "text2": "Figma ipsum component varlant main layer.Rectangle slice polygon ellipse component. Export thumbnail frame strikethough figjam vertical creact. 4 lines max",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBh-CQleCMH20vWjPlavrDGi6TOE_0IRtzFUkE_Fq3tXePMqjwKfTPTrtOXL1SaVTdiiU&usqp=CAU"
+    },
+    {
+      "text": "Quang Ninh forcaeast",
+      "text2": "Figma ipsum component varlant main layer.Rectangle slice polygon ellipse component. Export thumbnail frame strikethough figjam vertical creact. 4 lines max",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBh-CQleCMH20vWjPlavrDGi6TOE_0IRtzFUkE_Fq3tXePMqjwKfTPTrtOXL1SaVTdiiU&usqp=CAU"
+    },
+    {
+      "text": "Halong Bay",
+      "text2":"Figma ipsum component varlant main layer.Rectangle slice polygon ellipse component. Export thumbnail frame strikethough figjam vertical creact. 4 lines max",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBh-CQleCMH20vWjPlavrDGi6TOE_0IRtzFUkE_Fq3tXePMqjwKfTPTrtOXL1SaVTdiiU&usqp=CAU"
     }
+    
+
   ]
   
