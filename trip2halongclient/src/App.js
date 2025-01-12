@@ -23,7 +23,6 @@ import AllNew from './pages/AllNew';
 
 const App = () => {
   return (
-
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
