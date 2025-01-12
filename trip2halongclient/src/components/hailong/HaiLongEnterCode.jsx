@@ -1,14 +1,14 @@
 import React from 'react'
 
-const HaiLong = () => {
+const HaiLongEnterCode = ({email}) => {
   return (
-    <div className='flex flex-col w-full h-screen'>
+    <div className='flex  mt-[50px] flex-col w-full h-screen'>
       <div className='flex items-start justify-center mt-9'>
         <h1 className='text-[25px] font-bold'>Veryfi your email address</h1>
       </div>
       <div className='flex items-start justify-center'>
         <p>We sent a verification code to </p>
-        <p className='text-[#398FD4] ml-1'> yourname@example.com</p>
+        <p className='text-[#398FD4] ml-1'> {email}</p>
         <p>.</p>
       </div>
       <div className='flex items-start justify-center'>
@@ -41,4 +41,4 @@ const HaiLong = () => {
   )
 }
 
-export default HaiLong
+export default HaiLongEnterCode

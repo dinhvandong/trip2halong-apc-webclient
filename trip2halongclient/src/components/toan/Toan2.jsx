@@ -11,7 +11,9 @@ const Toan2 = ({ viewMode }) => {
   const navigate = useNavigate();
   
   const gotonext = () => {
-    navigate('/toandfg')
+    // navigate('/toandfg')
+    navigate('/booking-process')
+
   }
   const [value, setValue] = useState(50);
   const handleChange = (event) => {

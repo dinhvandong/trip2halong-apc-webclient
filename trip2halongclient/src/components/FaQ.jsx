@@ -9,27 +9,30 @@ const faqData = [
   {
     question: 'Why should I book through Trip2Halong instead of other platforms?',
     answer:
-      'Tailwind CSS is a utility-first CSS framework for rapidly building custom designs.',
+      'Trip2Halong is dedicated exclusively to Halong Bay tours and experiences. Our team comprises local experts who have in-depth knowledge of the area, ensuring you get the most authentic and well-curated experiences.',
   },
   {
     question: 'What types of cruises are available on Trip2Halong?',
     answer:
-      'You can install Tailwind CSS in your React project using npm or yarn, configure it, and use its utility classes directly in your JSX.',
+      'Perfect for travelers with limited time, our day cruises offer a taste of Halong Bay’s stunning scenery with visits to iconic sites like Sung Sot Cave, Titop Island, or Luon Cave. Enjoy a delicious lunch onboard while soaking in the beauty of the bay.',
   },
   {
     question: 'What types of accommodations can I find on Trip2Halong?',
     answer:
-      'State is a local data storage for a component that can change over time. Props are inputs passed to a component to control its behavior or appearance.',
+      'Experience ultimate relaxation at beachfront or island resorts that offer private villas, pools, and top-notch services. Perfect for couples or families seeking a tranquil escape.',
   },
   {
     question: 'What payment methods do you accept?',
     answer:
-      'State is a local data storage for a component that can change over time. Props are inputs passed to a component to control its behavior or appearance.',
+     "Trip2Halong offers a variety of secure payment methods to make your booking process convenient:\n" 
+     +"Credit/Debit Cards:\n"+
+"We accept major credit and debit cards, including Visa, Mastercard, American Express, and Discover."
+     ,
   },
   {
     question: 'How can I contact Trip2Halong for support?',
     answer:
-      'State is a local data storage for a component that can change over time. Props are inputs passed to a component to control its behavior or appearance.',
+      'Trip2Halong is committed to providing excellent customer service, and we offer several ways to get in touch:',
   },
 ];
 

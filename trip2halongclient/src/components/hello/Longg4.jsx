@@ -6,7 +6,7 @@ const Longg4 = () => {
     const navigate = useNavigate();
 
     const gotonext = () => {
-        navigate('/toanad')
+        navigate('/booking-payment')
     }
 
     const cruises = Array(3).fill({ name: "Ambassador Cruise", rating: "5.0" });

@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Duc = () => {
 
   const navigate = useNavigate();
+  const [email, setEmail] = useState(null);
 
-  const gotoLoginEmailPassword = ()=>{
+  // const gotoLoginEmailPassword = ()=>{
 
-    navigate('/sign-in-with-email-password');
-  }
+  //   navigate(`/sign-in-enter-code/${email}`);
+  // }
 
-  const gotoSignUp =()=>{
+  // const gotoSignUp =()=>{
 
-    navigate('/sign-up')
-  }
+  //   navigate('/sign-up')
+  // }
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value); // Update email state with input value
+  };
+
+  const gotoLoginEmailPassword = () => {
+    if (!email) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    navigate(`/sign-in-enter-code/${email}`);
+  };
+
+
+  const gotoSignUp = () => {
+    navigate('/sign-up');
+  };
   return (
     <div className='bg-slate-100 w-full items-center flex flex-col mt-[50px] h-screen'>
       <div  className='hover:cursor-pointer text-center font-bold mt-[80px] text-2xl text-gray-700'>
@@ -29,6 +46,7 @@ const Duc = () => {
       </div>
       <div className="flex w-full md:w-[600px] border-blue-600 border-[1px] mt-2 text-xl">
         <input
+          onChange={handleEmailChange}
           type="email"
           placeholder="YourEamilName@gmail.com"
           className="  flex-1 w-full px-4 py-2 focus:outline-none"
