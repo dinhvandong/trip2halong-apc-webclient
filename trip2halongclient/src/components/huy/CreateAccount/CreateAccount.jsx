@@ -2,10 +2,20 @@ import React, { useState } from 'react';
 import { FaRegEyeSlash } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
+import { signupSeller, signupUser } from '../../../apis/login_api'; // Import các hàm API
 
 const CreateAccount = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+        title: '',
+        nationality: '',
+        fullName: '',
+        phoneNumber: '',
+        businessInfo: null,
+    });
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -41,6 +51,33 @@ const CreateAccount = () => {
     const handleCountrySelect = (country) => {
         setSelectedCountry(country);
         setIsDropdownOpen(false);
+    };
+
+    // Cập nhật state khi thay đổi dữ liệu form
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    // Submit form
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            if (formData.businessInfo) {
+                // Nếu có thông tin doanh nghiệp, gọi API đăng ký seller
+                await signupSeller(formData);
+            } else {
+                // Nếu không có thông tin doanh nghiệp, gọi API đăng ký người dùng
+                await signupUser(formData);
+            }
+            alert("Đăng ký thành công");
+        } catch (error) {
+            console.error("Đăng ký thất bại", error);
+            alert("Đã xảy ra lỗi. Vui lòng thử lại.");
+        }
     };
 
 
@@ -90,7 +127,7 @@ const CreateAccount = () => {
                                             alt={selectedCountry.name}
                                         />
                                         <span className='flex'>{selectedCountry.code} <FaAngleDown className='ml-1 pt-1 text-lg' /></span>
-                                        
+
                                     </button>
 
                                     {isDropdownOpen && (
@@ -225,47 +262,47 @@ const CreateAccount = () => {
                                 <h5 className='text-[13px] font-semibold mb-2 text-neutral-900 mt-1'>Phone Number<span className='text-red-500'>*</span></h5>
 
                                 <div className="flex items-center">
-                                {/* Dropdown */}
-                                <div className="relative">
-                                    <button
-                                        onClick={toggleDropdown}
-                                        className="py-2 px-3 shadow-inner font-semibold text-sm w-24 bg-gray-100 flex items-center "
-                                    >
-                                        <img
-                                            className="w-5 h-4 mr-1"
-                                            src={selectedCountry.flag}
-                                            alt={selectedCountry.name}
-                                        />
-                                        <span className='flex'>{selectedCountry.code} <FaAngleDown className='ml-1 pt-1 text-lg' /></span>
-                                        
-                                    </button>
+                                    {/* Dropdown */}
+                                    <div className="relative">
+                                        <button
+                                            onClick={toggleDropdown}
+                                            className="py-2 px-3 shadow-inner font-semibold text-sm w-24 bg-gray-100 flex items-center "
+                                        >
+                                            <img
+                                                className="w-5 h-4 mr-1"
+                                                src={selectedCountry.flag}
+                                                alt={selectedCountry.name}
+                                            />
+                                            <span className='flex'>{selectedCountry.code} <FaAngleDown className='ml-1 pt-1 text-lg' /></span>
 
-                                    {isDropdownOpen && (
-                                        <div className="absolute mt-1 bg-white shadow-lg rounded w-40">
-                                            {countries.map((country) => (
-                                                <div
-                                                    key={country.code}
-                                                    className="p-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                                                    onClick={() => handleCountrySelect(country)}
-                                                >
-                                                    <img
-                                                        className="w-5 h-5 mr-2"
-                                                        src={country.flag}
-                                                        alt={country.name}
-                                                    />
-                                                    <span>{country.name} ({country.code})</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
+                                        </button>
+
+                                        {isDropdownOpen && (
+                                            <div className="absolute mt-1 bg-white shadow-lg rounded w-40">
+                                                {countries.map((country) => (
+                                                    <div
+                                                        key={country.code}
+                                                        className="p-2 hover:bg-gray-100 flex items-center cursor-pointer"
+                                                        onClick={() => handleCountrySelect(country)}
+                                                    >
+                                                        <img
+                                                            className="w-5 h-5 mr-2"
+                                                            src={country.flag}
+                                                            alt={country.name}
+                                                        />
+                                                        <span>{country.name} ({country.code})</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Input */}
+                                    <input
+                                        className="shadow-inner w-full text-sm py-2 px-1 pl-2 "
+                                        placeholder="012 345 6789"
+                                    />
                                 </div>
-
-                                {/* Input */}
-                                <input
-                                    className="shadow-inner w-full text-sm py-2 px-1 pl-2 "
-                                    placeholder="012 345 6789"
-                                />
-                            </div>
 
                             </div>
 

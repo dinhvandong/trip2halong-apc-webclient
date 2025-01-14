@@ -1,8 +1,72 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { verifyOtp } from "../../apis/login_api";
 
-const HaiLongEnterCode = ({email}) => {
+const HaiLongEnterCode = ({ email }) => {
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const inputs = useRef([]);
+
+  const handleChange = (value, index) => {
+    if (/^\d$/.test(value)) {
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+
+      if (index < inputs.current.length - 1) {
+        inputs.current[index + 1].focus();
+      }
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && otp[index] === "") {
+      if (index > 0) {
+        inputs.current[index - 1].focus();
+      }
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pastedData = e.clipboardData.getData("Text").slice(0, 4).split("");
+    const newOtp = [...otp];
+    pastedData.forEach((char, i) => {
+      if (/^\d$/.test(char) && i < newOtp.length) {
+        newOtp[i] = char;
+      }
+    });
+    setOtp(newOtp);
+
+    const lastIndex = Math.min(pastedData.length, inputs.current.length) - 1;
+    if (lastIndex >= 0) {
+      inputs.current[lastIndex].focus();
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    const otpValue = otp.join("");
+    if (otpValue.length !== 4) {
+      setMessage("Please enter a valid 4-digit OTP.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await verifyOtp(email, otpValue);
+      setMessage(`OTP verified successfully: ${response.message}`);
+    } catch (error) {
+      setMessage(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  //const { email } = useParams();
   return (
-    <div className='flex  mt-[50px] flex-col w-full h-screen'>
+    <div className='flex  mt-[50px] flex-col  items-center w-full h-screen'>
       <div className='flex items-start justify-center mt-9'>
         <h1 className='text-[25px] font-bold'>Veryfi your email address</h1>
       </div>
@@ -14,14 +78,28 @@ const HaiLongEnterCode = ({email}) => {
       <div className='flex items-start justify-center'>
         <p>Enter this code to continue </p>
       </div>
-      <div className='flex items-start justify-center gap-4 mt-6'>
-        <input className='w-12 h-12 bg-white border border-gray-300 rounded-md'></input>
-        <input className='w-12 h-12 bg-white border border-gray-300 rounded-md'></input>
-        <input className='w-12 h-12 bg-white border border-gray-300 rounded-md'></input>
-        <input className='w-12 h-12 bg-white border border-gray-300 rounded-md'></input>
+      <div
+        className="flex justify-center  items-center gap-4"
+        onPaste={handlePaste}
+      >
+        {otp.map((digit, index) => (
+          <input
+            key={index}
+            type="text"
+            maxLength="1"
+            value={digit}
+            onChange={(e) => handleChange(e.target.value, index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            ref={(el) => (inputs.current[index] = el)}
+            className="w-12 h-12 bg-white border border-gray-300 rounded-md text-center text-lg"
+          />
+        ))}
       </div>
       <div className='flex flex-col items-center justify-center mt-6'>
-        <button className='bg-[#1470B4] h-[40px] w-[450px] text-white font-bold'>Veryfi Email</button>
+        <button className='bg-[#1470B4] h-[40px] w-[450px] text-white font-bold'
+          onClick={handleVerifyOtp}
+          disabled={loading}
+        >{loading ? "Verifying..." : "Veryfi Email"}</button> {message && <p className="mt-2 text-red-500">{message}</p>}
         <button className='bg-white h-[40px] w-[450px] text-[#1470B4] font-bold border border-[#1494b4] mt-3'>Reques New Code</button>
         <p className='text-black mt-3 text-[15px]'>Email not avaliable?<span className='text-[#1494b4] ml-1 underline font-bold'>Enter Your Password </span></p>
       </div>

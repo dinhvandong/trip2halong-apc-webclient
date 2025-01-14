@@ -12,6 +12,7 @@ import BookingPage from './pages/BookingPage'
 import AboutPage from './pages/AboutPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
+import SignInEnterCode from './pages/SignInEnterCodePage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import MainComponent from './components/toan/MainComponent'
 import SignInPage from './pages/SignInPage'
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/home" element={<HomePage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-in-enter-code/:email" element={<SignInEnterCode />} />
         <Route path="/sign-in-with-email-password" element={<SignInEmailandPassword />} />
 
         <Route path="/booking" element={<BookingPage />} />

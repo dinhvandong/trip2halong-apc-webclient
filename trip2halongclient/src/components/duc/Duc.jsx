@@ -1,37 +1,64 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { requestOtp } from "../../apis/login_api";
 
 const Duc = () => {
 
   const navigate = useNavigate();
-  const [email, setEmail] = useState(null);
+  //const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  // const gotoLoginEmailPassword = ()=>{
+  const handleRequestOtp = async () => {
+    if (!email) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    try {
+      const result = await requestOtp(email);
+      setMessage('OTP sent successfully! Please check your email.');
+      navigate(`/sign-in-enter-code/${email}`);
+      console.log(result);
+    } catch (error) {
+      setMessage('Error requesting OTP: ' + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  //   navigate(`/sign-in-enter-code/${email}`);
-  // }
 
-  // const gotoSignUp =()=>{
 
-  //   navigate('/sign-up')
-  // }
+
+
+  const gotoLoginEmailPassword = ()=>{
+
+    navigate(`/sign-in-enter-code/${email}`);
+  }
+
+  const gotoSignUp =()=>{
+
+    navigate('/sign-up')
+  }
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value); // Update email state with input value
   };
 
-  const gotoLoginEmailPassword = () => {
-    if (!email) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    navigate(`/sign-in-enter-code/${email}`);
-  };
+  // const gotoLoginEmailPassword = () => {
+  //   if (!email) {
+  //     alert('Please enter a valid email address.');
+  //     return;
+  //   }
+  //   navigate(`/sign-in-enter-code/${email}`);
+  // };
 
 
-  const gotoSignUp = () => {
-    navigate('/sign-up');
-  };
+  // const gotoSignUp = () => {
+  //   navigate('/sign-up');
+  // };
   return (
     <div className='bg-slate-100 w-full items-center flex flex-col mt-[50px] h-screen'>
       <div  className='hover:cursor-pointer text-center font-bold mt-[80px] text-2xl text-gray-700'>
@@ -44,20 +71,34 @@ const Duc = () => {
       Email
         <span className='text-red-500 text-sm'>*</span>
       </div>
+      <div className="flex flex-col items-center w-full">
+      {/* Input Email */}
       <div className="flex w-full md:w-[600px] border-blue-600 border-[1px] mt-2 text-xl">
         <input
-          onChange={handleEmailChange}
+          onChange={(e) => setEmail(e.target.value)}
           type="email"
-          placeholder="YourEamilName@gmail.com"
-          className="  flex-1 w-full px-4 py-2 focus:outline-none"
+          placeholder="YourEmailName@gmail.com"
+          value={email}
+          className="flex-1 w-full px-4 py-2 focus:outline-none"
         />
       </div>
 
+      {/* Button */}
       <div>
-        <button onClick={gotoLoginEmailPassword} className="w-full  md:w-[600px] py-2 font-semibold mt-4 text-white bg-blue-500 transition-colors border border-white  whitespace-nowrap">
-          Continue with Email
+        <button
+          onClick={handleRequestOtp}
+          disabled={loading}
+          className={`w-full md:w-[600px] py-2 font-semibold mt-4 text-white transition-colors border border-white whitespace-nowrap ${
+            loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
+          }`}
+        >
+          {loading ? "Processing..." : "Continue with Email"}
         </button>
       </div>
+
+      {/* Message */}
+      {message && <p className="mt-4 text-red-500">{message}</p>}
+    </div>
       <div className='flex justify-items-center '>
         <h1 className='mt-3 '>Don't Have an Acount ?</h1>
         <button onClick={gotoSignUp} className='ml-[10px] mt-3 text-blue-600 underline underline-offset-1'>
@@ -96,3 +137,5 @@ const Duc = () => {
 };
 
 export default Duc;
+
+
