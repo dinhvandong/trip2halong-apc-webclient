@@ -18,6 +18,7 @@ import SignInPage from './pages/SignInPage'
 import SignInEmailandPassword from './pages/SignInEmailandPassword'
 import FaQPage from './pages/FaQPage'
 import AllNew from './pages/AllNew';
+import New from './pages/New';
 // import Duc from './components/Duc/Duc'
 
 
@@ -36,6 +37,8 @@ const App = () => {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FaQPage />} />
+        <Route path="/news" element={<New/>}/>
+
 
         <Route path="/" element={<HomePage/>} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />

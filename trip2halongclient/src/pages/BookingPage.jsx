@@ -13,7 +13,6 @@ const BookingPage = () => {
             <Kien />
            <MainComponent/>
             <Footer/>
-
         </div>
     )
 }
