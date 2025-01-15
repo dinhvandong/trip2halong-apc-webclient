@@ -1,26 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { FaStar } from "react-icons/fa";
-import travelData from "./travel.json";
+import homehome from "../../apis/home";
+import NameWithB from "./NameWithB";
+import StarRat from "./StarRat";
+
 
 
 const GridWithSelect = () => {
   const [data, setData] = useState([]);
-  const [rows] = useState(3); // Default rows per page
+  const [error, setError] = useState(null);
+  const [rows] = useState(4); // Default rows per page
   const [currentPage, setCurrentPage] = useState(1);
   const [direction, setDirection] = useState(""); // Track slide direction ("left" or "right")
   const [isSliding, setIsSliding] = useState(false); // Manage sliding animation
 
   useEffect(() => {
-    // Fetch data from the JSON file
-    fetch("/travel.json")
-      .then((response) => response.json())
-      .then((json) => setData(json));
+    const getData = async () => {
+      try {
+        const result = await homehome();
+        setData(result.result);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    getData();
   }, []);
 
-  const totalPages = Math.ceil(travelData.length / rows);
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  const totalPages = Math.ceil(data.length / rows);
 
   // Get data for the current page
-  const paginatedData = travelData.slice((currentPage - 1) * rows, currentPage * rows);
+  const paginatedData = data.slice((currentPage - 1) * rows, currentPage * rows);
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -35,20 +48,20 @@ const GridWithSelect = () => {
     }
   };
 
+  
   return (
-    <div className="p-6 bg-gray-100">
+    <div className="bg-gray-100 ">
       {/* Grid Container with Slide Effect */}
       <div
         className={`relative overflow-hidden`}
       >
         <div
-          className={`grid grid-cols-3 gap-6 transition-transform duration-300 transform ${
-            isSliding
+          className={`flex gap-6 transition-transform duration-300 transform ${isSliding
               ? direction === "right"
                 ? "translate-x-full"
                 : "-translate-x-full"
               : "translate-x-0"
-          }`}
+            }`}
         >
           {paginatedData.map((item) => (
             <div
@@ -57,20 +70,16 @@ const GridWithSelect = () => {
             >
               <div className="h-[55%] w-full relative">
                 <img
-                  src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5Jvtj9EuAkxb60gxgDT0mhlH4WZ5iu9mrpVb3BM8_ck9yh1cx"
-                  alt="halong"
-                  className="h-full w-full object-cover rounded-xl"
+                  src={item.thumbnail}
+                  alt={item.thumbnail}
+                  className="object-cover w-full h-full"
                 />
                 <div className="flex font-light absolute top-3 left-3 bg-[#157DC8] text-white text-sm px-4 py-2 rounded-3xl">
-                  From<div className="font-medium ml-1">USD 180</div>
+                  From<div className="ml-1 font-medium">USD 180</div>
                 </div>
               </div>
-              <div className="flex ml-5 mt-3">
-                <FaStar className="w-[10px] h-[10px] text-[#FDB007]" />
-                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
-                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
-                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
-                <FaStar className="w-[10px] h-[10px] text-[#FDB007] ml-[3px]" />
+              <div className="flex mt-3 ml-5">
+                <StarRat rating={Math.round(item.star)} />
                 <div className="flex justify-center items-center w-6 h-3 py-1 bg-[#FDB007] ml-1">
                   <p className="font-medium text-white text-[8px]">4.5/s</p>
                 </div>
@@ -78,31 +87,17 @@ const GridWithSelect = () => {
 
               {/* Title and Subtitle */}
               <div className="flex ml-5">
-                <p className="font-bold text-[21px]">
-                  {item.title}
-                  <span className="font-bold text-[21px] -mt-2 ml-1">
-                    {item.subtitle}
-                  </span>
-                </p>
+                <NameWithB name={item.name} />
               </div>
-              <div className="flex flex-col ml-5 leading-[1.2]">
-                <p className="font-normal text-[13.5px] font-sans text-[#A5A9AA]">
-                  Figma ipsum component variant main layer. Move
-                </p>
-                <p className="font-normal text-[13.5px] font-sans text-[#A5A9AA]">
-                  boolean vertical duplicate layer bullet. Prototype
-                </p>
-                <p className="font-normal text-[13.5px] font-sans text-[#A5A9AA]">
-                  align distribute bold resizing.
-                </p>
-              </div>
+              <p className="text-[12px] text-gray-500 ml-5">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
 
+
       {/* Pagination Controls */}
-      <div className="flex justify-center mt-6 items-center">
+      <div className="flex items-center justify-center mt-6">
         {/* Left Arrow */}
         <button
           className="px-3 py-1 text-sm bg-gray-300 hover:bg-gray-400 rounded-l-md"
@@ -113,15 +108,14 @@ const GridWithSelect = () => {
         </button>
 
         {/* Page Numbers */}
-        <div className="flex space-x-2 px-4">
+        <div className="flex px-4 space-x-2">
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index}
-              className={`px-3 py-1 text-sm rounded-md ${
-                currentPage === index + 1
+              className={`px-3 py-1 text-sm rounded-md ${currentPage === index + 1
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 hover:bg-gray-300"
-              }`}
+                }`}
               onClick={() => handlePageChange(index + 1)}
             >
               {index + 1}

@@ -37,7 +37,7 @@ const App = () => {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FaQPage />} />
-        <Route path="/news" element={<New/>}/>
+        <Route path="/news" element={<AllNew/>}/>
         
         <Route path="/" element={<HomePage/>} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
@@ -45,19 +45,6 @@ const App = () => {
         <Route path="/create-account" element={<CreateAccountPage />} />
       </Routes>
     </BrowserRouter>
-    // <div className='flex flex-col '>
-
-    //   <Kien/>
-    //   <Huy/>
-    //   <Quan/>
-    //   <Toanbo/>
-    //   <Quan/>
-    //   <Toanbo/>
-    //   {/* <Duc/> */}
-
-    //   <VuLong/>
-
-    // </div>
   )
 }
 

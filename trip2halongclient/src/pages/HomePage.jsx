@@ -7,6 +7,8 @@ import VuLong from '../components/vulong/VuLong'
 import AboutUs from '../components/quan/AboutUs'
 import HaiLong from '../components/vulong/HaiLong'
 import Footer from '../components/vulong/Footer'
+import Favority from '../components/toanlili/Favority';
+import Inspiration from '../components/toanuiui/Inspiration';
 
 const HomePage = () => {
     return (
@@ -15,8 +17,8 @@ const HomePage = () => {
             <Huy />
             <Quan />
             <Toanbo />
-            <Quan />
-            <Toanbo />
+            <Favority/>
+            <Inspiration/>
             <HaiLong/>
             <Footer />
         </div>
