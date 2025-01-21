@@ -19,11 +19,12 @@ import SignInEmailandPassword from './pages/SignInEmailandPassword'
 import FaQPage from './pages/FaQPage'
 import AllNew from './pages/AllNew';
 import New from './pages/New';
-import AdminPage from './pages/admin/AdminPage'
-import PropertyPage from './pages/admin/PropertyPage'
-import ActivityPage from './pages/admin/ActivityPage'
-import BookingsPage from './pages/admin/BookingsPage'
-import RequestPage from './pages/admin/RequestPage'
+import AdminPage from './admin/pages/AdminPage'
+import PropertyPage from './admin/pages/PropertyPage'
+import ActivityPage from './admin/pages/ActivityPage'
+import RequestPage from './admin/pages/RequestPage'
+import BookingsPage from './admin/pages/BookingsPage'
+
 // import Duc from './components/Duc/Duc'
 
 
@@ -48,7 +49,6 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
-
         <Route path="/admin/dashboard" element={<AdminPage />} />
         <Route path="/admin/property" element={<PropertyPage />} />
         <Route path="/admin/activity" element={<ActivityPage />} />
