@@ -48,5 +48,5 @@ const Kien = () => {
     </div>
   )
 }
-// anh h-800px
+
 export default Kien

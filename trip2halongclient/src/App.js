@@ -25,6 +25,9 @@ import PropertyPage from './pages/admin/PropertyPage'
 import ActivityPage from './pages/admin/ActivityPage'
 import BookingsPage from './pages/admin/BookingsPage'
 import RequestPage from './pages/admin/RequestPage'
+
+import SidebarAdmin from './components/admin/SidebarAdmin'
+import Activity2 from './pages/admin/Activity2'
 // import Duc from './components/Duc/Duc'
 
 
@@ -56,6 +59,8 @@ const App = () => {
         <Route path="/admin/activity" element={<ActivityPage />} />
         <Route path="/admin/bookings" element={<BookingsPage/>} />
         <Route path="/admin/request" element={<RequestPage />} />
+        <Route path="/activity/activity2" element={<Activity2 />} />
+
       </Routes>
     </BrowserRouter>
   )

@@ -43,7 +43,7 @@ const Toanbo = () => {
             </div>
           </div>
           {/* Image Gallery */}
-          <ImageGallery currentIndex={currentIndex} />
+          <ImageGallery currentIndex={currentIndex}/>
           <div className='w-full h-[80px] flex justify-end items-center pr-4'>
             <button className='w-[10%] h-[50%] bg-blue-400 rounded-lg items-center text-[13px] font-bold justify-center text-white flex-row flex'>Expoler The List<IoIosArrowRoundForward/> </button>
           </div>
