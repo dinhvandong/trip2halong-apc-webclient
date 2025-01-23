@@ -76,7 +76,7 @@ const YourProperty = () => {
           </div>
         </div>
       </div>
-      <div className='mt-2'>
+      <div className='my-2'>
         {activeTab === 'account' && (
           <AccountTab />
         )}

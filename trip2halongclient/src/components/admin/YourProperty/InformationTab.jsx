@@ -1,11 +1,38 @@
 import React, { useState, useEffect } from 'react'
+import { FaAngleDown } from "react-icons/fa";
 
 const InformationTab = () => {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCountry, setSelectedCountry] = useState(null);
+  const currentYear = new Date().getFullYear(); // Năm hiện tại
+  const [birthYears, setBirthYears] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState({
+    name: 'Vietnam',
+    code: '+84',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png',
+  });
+
   const [file, setFile] = useState(null);
   const [logo, setLogo] = useState(null);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  // Hàm tạo danh sách năm sinh
+  const generateBirthYears = (startYear, endYear) => {
+    const years = [];
+    for (let year = endYear; year >= startYear; year--) {
+      years.push(year);
+    }
+    return years;
+  };
+
+  // Khởi tạo danh sách năm sinh từ năm 1900 đến năm hiện tại
+  React.useEffect(() => {
+    const years = generateBirthYears(1800, currentYear);
+    setBirthYears(years);
+  }, [currentYear]);
 
   // Xử lý thay đổi baner
   const handleFileChange = (event) => {
@@ -57,7 +84,7 @@ const InformationTab = () => {
     return <div className="text-center mt-10">Loading...</div>;
   }
   return (
-    <div className='mx-4'>
+    <div className='mx-4 '>
       <div className='bg-[#F9F9F9] flex flex-row px-7 pb-6 pt-7 rounded-xl' >
         <div className='flex-1'>
           <h3 className='font-semibold text-lg'>information</h3>
@@ -214,44 +241,58 @@ const InformationTab = () => {
 
           </div>
           <div className='flex flex-row mt-2'>
-            <div className='flex-1 mr-3'>
-              <h5 className='ml-3 font-medium text-sm'>Phone Number<span className='text-red-500'>*</span></h5>
-              {/* Dropdown chọn quốc gia */}
-              <select
-                className="w-full py-2 px-3 rounded-md border border-gray-300 focus:outline-none"
-                onChange={handleChange}
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select a country
-                </option>
-                {countries.map((country) => (
-                  <option key={country.dialCode} value={country.dialCode}>
-                    {country.name} ({country.dialCode})
-                  </option>
-                ))}
-              </select>
+            
+              <div className='flex-1 mr-3'>
+                <h5 className='ml-3 font-medium text-sm'>Phone Number<span className='text-red-500'>*</span></h5>
 
-              {/* Hiển thị thông tin quốc gia đã chọn */}
-              {selectedCountry && (
-                <div className="mt-4">
-                  <div className="flex items-center">
-                    <img
-                      src={selectedCountry.flag}
-                      alt={selectedCountry.name}
-                      className="w-8 h-8 mr-3"
-                    />
-                    <div>
-                      <p className="font-medium">{selectedCountry.name}</p>
-                      <p className="text-sm text-gray-500">
-                        Dial Code: {selectedCountry.dialCode}
-                      </p>
-                    </div>
+                <div className="flex items-center">
+                  {/* Dropdown */}
+                  <div className="relative">
+                    <button
+                      onClick={toggleDropdown}
+                      className="py-2 px-3 rounded-l-md shadow-inner focus:outline-none font-semibold text-sm w-24 bg-gray-100 flex items-center "
+                    >
+                      <img
+                        className="w-5 h-4 mr-1"
+                        src={selectedCountry.flag}
+                        alt={selectedCountry.name}
+                      />
+                      <span className='flex'>{selectedCountry.code} <FaAngleDown className='ml-1 pt-1 text-lg' /> </span>
+
+                    </button>
+
+                    {/* {isDropdownOpen && (
+                      <div className="absolute mt-1 bg-white shadow-lg rounded w-40">
+                        {countries.map((country) => (
+                          <div
+                            key={country.code}
+                            className="p-2 hover:bg-gray-100 flex items-center cursor-pointer"
+
+                          >
+                            <img
+                              className="w-5 h-5 mr-2"
+                              src={country.flags.png}
+                              alt={country.name.common}
+                            />
+                            <span>{" "}
+                              {country.idd.root
+                                ? `${country.idd.root}${country.idd.suffixes?.[0] || ""}`
+                                : "N/A"}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )} */}
                   </div>
-                </div>
-              )}
-              <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md' placeholder='0912 345 6789' type="text" />
 
+                  {/* Input */}
+                  <input 
+
+                    className="w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md"
+                    placeholder="012 345 6789"
+                  />
+                </div>
+
+              
             </div>
             <div className='flex-1 ml-3'>
               <h5 className='ml-3 font-medium text-sm'>Postal Code<span className='text-red-500'>*</span></h5>
@@ -259,6 +300,52 @@ const InformationTab = () => {
               <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md' placeholder='0000000' type="text" />
             </div>
 
+          </div>
+          <div className='flex-1 mt-2'>
+            <h5 className='ml-3 font-medium text-sm'>Website<span className='text-red-500'>*</span></h5>
+            <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md'
+              placeholder="Link to your Website"
+              type="text" />
+          </div>
+          <div className='flex-1 mt-2'>
+            <h5 className='ml-3 font-medium text-sm'>Facebook</h5>
+            <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md'
+              placeholder="Link to your Facebook's Page"
+              type="text" />
+          </div>
+          <div className='flex-1 mt-2'>
+            <h5 className='ml-3 font-medium text-sm'>Youtube</h5>
+            <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md'
+              placeholder="Link to your Youtube's Page"
+              type="text" />
+          </div>
+          <div className='flex-1 mt-2'>
+            <h5 className='ml-3 font-medium text-sm'>Instagram</h5>
+            <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md'
+              placeholder="Link to your Instagram's Page"
+              type="text" />
+          </div>
+          <div className='flex flex-row mt-2'>
+            <div className='flex-1'>
+              <h5 className='ml-3 font-medium text-sm'>Year Established<span className='text-red-500'>*</span></h5>
+
+              <select
+
+                className=' w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md '>
+                <option value="" disabled>
+                  -- Select your Year Established --
+                </option>
+                {birthYears.map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className='grid justify-items-end'>
+            <button className=' mt-7 px-6 py-3 rounded-full mr-1 bg-[#167DC8] text-white font-medium text-sm hover:bg-[#104672] transition duration-300 '>Save Changes</button>
           </div>
         </div>
       </div>
