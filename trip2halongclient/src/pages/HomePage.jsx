@@ -7,17 +7,16 @@ import VuLong from '../components/vulong/VuLong'
 import AboutUs from '../components/quan/AboutUs'
 import HaiLong from '../components/vulong/HaiLong'
 import Footer from '../components/vulong/Footer'
-import Favority from '../components/toanlili/Favority';
-import Inspiration from '../components/toanuiui/Inspiration';
-import TopBanner from '../components/TopBanner'
+import Favority from '../components/toanlili/Favority'
+import Inspiration from '../components/toanuiui/Inspiration'
 
 const HomePage = () => {
     return (
         <div className='flex flex-col items-center '>
-            <TopBanner />
+            <Kien />
             <Huy />
-            <Quan />
-            <Toanbo />
+            <Quan/>
+            <Toanbo/>
             <Favority/>
             <Inspiration/>
             <HaiLong/>
