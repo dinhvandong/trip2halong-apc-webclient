@@ -53,7 +53,7 @@ const App = () => {
         <Route path="/booking-payment" element={<Longg/>}/>
         <Route path="/booking-process" element={<ToanUpdate/>}/>
         
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
