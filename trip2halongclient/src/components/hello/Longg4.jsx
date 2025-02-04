@@ -64,7 +64,7 @@ const Longg4 = () => {
                 ))}
             </div>
             <div className='w-full h-[110px] flex bg-[#F4F4F4] justify-center items-center'>
-            <button onClick={gotonext} className='bg-[#167DC8] w-[400px] h-[50px] rounded-lg cursor-pointer text-white font-bold'>Proceed Payment</button>
+            <button className='bg-[#167DC8] w-[400px] h-[50px] rounded-lg cursor-pointer text-white font-bold'>Proceed Payment</button>
                 </div>
         </div>
     )

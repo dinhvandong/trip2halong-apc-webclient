@@ -4,8 +4,16 @@ import { CgChevronDown } from "react-icons/cg";
 import { GiUsaFlag } from "react-icons/gi";
 import { GiSouthAfricaFlag } from "react-icons/gi";
 import { FcRating } from "react-icons/fc";
+import { useNavigate } from 'react-router-dom';
 
 const Toansdf = () => {
+    const navigate = useNavigate();
+
+    const gotonext = () => {
+        navigate('/booking-payment')
+    }
+
+
     const [tooltip, setTooltip] = useState(null);
 
     const handleMouseEnter = (position) => {
@@ -54,20 +62,19 @@ const Toansdf = () => {
         <div className='flex flex-col items-center w-full h-auto bg-gray-300 '>
             <div className='flex items-center justify-center w-[80%] h-[100px]'>
                 <div className="relative w-[70%] h-auto">
-                    {/* Dòng kẻ nền */}
+
                     <div className="absolute left-0 w-full h-1 bg-[#EAEEEF] top-4"></div>
 
-                    {/* Dòng kẻ xanh */}
                     <div
                         className="absolute  h-1 transition-all duration-500 bg-[#3E75AB] top-4"
                         style={{ width: `${progressWidths[currentStep - 1]}%`, left: `${(currentStep - 1) * (100 / (steps.length - 1))}%` }}
                     ></div>
 
-                    {/* Các bước */}
+          
                     <div className="relative flex justify-between mt-1.5">
                         {steps.map((step) => (
                             <div key={step.id} className="flex flex-col items-center w-1/3">
-                                {/* Vòng tròn số */}
+
                                 <div
                                     onClick={() => setCurrentStep(step.id)}
                                     className={`w-5 h-5 flex justify-center items-center rounded-full cursor-pointer transition-colors duration-300 ${currentStep === step.id
@@ -77,7 +84,6 @@ const Toansdf = () => {
                                 >
                                 </div>
 
-                                {/* Nhãn bước */}
                                 <span
                                     className={`mt-2 text-center text-lg font-bold ${currentStep === step.id
                                         ? 'text-[#3E75AB] font-bold'
@@ -366,7 +372,7 @@ const Toansdf = () => {
                         <p className='text-[17px] text-[#505556] mt-1'>
                             Please refer to the <span className="font-bold underline">Terms & Condition</span>, and <span className="font-bold underline">Privacy Policy</span> by Trip2Halong
                         </p>
-                        <button className='bg-[#167DC8] w-[90%] h-[50px] rounded-lg mt-5 text-white font-bold'>Proceed Payment</button>
+                        <button onClick={gotonext} className='bg-[#167DC8] w-[90%] h-[50px] rounded-lg mt-5 text-white font-bold'>Proceed Payment</button>
                     </div>
                 </div>
             </div>
