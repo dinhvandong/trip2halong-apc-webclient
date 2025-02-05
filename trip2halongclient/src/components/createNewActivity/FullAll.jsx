@@ -1,89 +1,92 @@
 import React, { useState } from 'react'
-import { FiChevronDown } from "react-icons/fi";
-import { IoSearch } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
-import Category from './Category';
-import Media from './Media';
-import Pricing from './Pricing';
-import { useNavigate } from 'react-router-dom';
-
+import { MdKeyboardArrowDown } from "react-icons/md";
+import YouPacDet from './YouPacDet';
+import MediaCenter from './MediaCenter';
 
 const FullAll = () => {
-    const navigate = useNavigate();
+    const [activeTab, setActiveTab] = useState('account');
+    const [isChecked, setIsChecked] = useState(false);
 
-    const gotonextAc = () => {
-        navigate('/activity/activity2');
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
     };
-
-    const [checkedd, setCheckedd] = useState({
-        checkbox1: false,
-        checkbox2: false,
-    })
-
-    const handchechbox = (event) => {
-        const { name, checkedd } = event.target;
-        setCheckedd((prevCheckedd) => ({
-            ...prevCheckedd,
-            [name]: checkedd,
-        }));
-    }
     return (
         <div className='flex flex-col w-[80%] h-auto bg-white rounded-md'>
-            <div className='flex flex-row w-full h-[50px] justify-between bg-[#e1e3e1] rounded-md'>
-                <div className='flex flex-row items-center w-[20%] h-full px-3'>
-                    <button className='bg-yellow-300 rounded-full w-9 h-9'></button>
-                    <p className='ml-2 text-[15px] text-black font-bold leading-none'>Thanh Thanh Pham <br />
-                        <span className='text-[13px] font-normal '>PR Manager</span>
-                    </p>
-                    <button><FiChevronDown className='ml-3'></FiChevronDown></button>
+            <div className="flex flex-row justify-between items-center bg-[#F9F9F9] w-full rounded-t-md border-b-2 p-4">
+                <div className="flex flex-row items-center space-x-3 cursor-pointer">
+                    <div>
+                        <img
+                            className="w-[50px] h-[50px] rounded-full"
+                            src="https://m.media-amazon.com/images/M/MV5BMmU1YWU1NmMtMjAyMi00MjFiLWFmZmUtOTc1ZjI5ODkxYmQyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div>
+                        <p className="font-bold">Thanh Thanh Pham</p>
+                        <p className="text-sm font-thin">PR Manager</p>
+                    </div>
+                    <div>
+                        <MdKeyboardArrowDown />
+                    </div>
                 </div>
-                <div className='flex flex-row items-center justify-center w-[20%] h-full '>
-                    <button className='font-bold text-gray-400 hover:text-black'>My Activity</button>
-                    <p>/</p>
-                    <button className='font-bold text-gray-400 hover:text-black'>Create</button>
+                <div>
+                    <button className="text-xl font-bold text-[#D3D7D7] hover:text-black">My Activity /</button>
+                    <button className="text-xl font-bold text-[#D3D7D7] hover:text-black"> Create</button>
                 </div>
-                <div className="flex flex-row items-center justify-center px-2 py-1 rounded-md">
+                <div className="flex flex-row border-[1px] border-[#167DC8] justify-center items-center bg-white px-2 py-1 rounded-md">
                     <div>
                         <input
-                            className="w-full px-3 focus:outline-none"
+                            className="w-full focus:outline-none"
                             placeholder="Search"
                             type="search"
                         />
                     </div>
-                    <div className="text-[#167DC8] cursor-pointer px-2 py-1 bg-white">
+                    <div className="text-[#167DC8] cursor-pointer">
                         <FiSearch />
                     </div>
                 </div>
             </div>
-            <div className='flex flex-col w-full h-auto p-4'>
-                <div className='w-full h-[70px] bg-white flex justify-center items-center'>
-                    <p className='font-bold text-[28px]'>Create New Category</p>
-                </div>
-                <Category />
-                <Media />
-                <Pricing />
-                <div className='w-full h-[50px] flex items-center p-3'>
-                    <div className="w-full h-full">
-                        <div className="flex items-center space-x-2">
-                            <input
-                                type="checkbox"
-                                id="checkbox1"
-                                name="checkbox1"
-                                checked={checkedd.checkbox1}
-                                onChange={handchechbox}
-                                className="w-4 h-4 border-gray-300 rounded"
-                            />
-                            <label htmlFor="checkbox1" className="text-gray-700">
-                                I hereby confrim that the provided information is accurate and give my consent to procced with pulingshing the package.
-                            </label>
-                        </div>
+            <div className="p-4">
+                <div className="flex flex-col items-center justify-center w-full pt-10 ">
+                    <div className="text-4xl ">
+                        <span className="font-bold ">Create New Activity</span>
                     </div>
-
-
+                    <div className='bg-[#104672] text-white font-semibold mt-10 rounded-full py-2 px-2'>
+                        <button
+                            className={`${activeTab === 'account' ? 'bg-[#167DC8]' : 'hover:bg-[#167DC8]'
+                                } px-8 py-3 rounded-full mr-1 transition duration-300 `}
+                            onClick={() => setActiveTab('account')}
+                        >
+                            Packege Information
+                        </button>
+                        <button
+                            className={`${activeTab === 'information' ? 'bg-[#167DC8]' : 'hover:bg-[#167DC8]'
+                                } px-8 py-3 rounded-full ml-1 transition duration-300 `}
+                            onClick={() => setActiveTab('information')}
+                        >
+                            Pricing Strategy
+                        </button>
+                    </div>
                 </div>
-                <div className='flex items-center justify-center w-full h-auto'>
-                    <button onClick={gotonextAc} className='px-8 py-2 text-white bg-blue-700 rounded-2xl'>Submit</button>
-                </div>
+            </div>
+            <YouPacDet />
+            <MediaCenter />
+            <div className='w-full h-[60px] flex items-center p-6'>
+                <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                        className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring focus:ring-blue-300"
+                    />
+                    <span className="text-gray-700">I hereby confrim that the provided information is accurate and give myconsert to proceed with the package.</span>
+                </label>
+            </div>
+            <div className='flex justify-center w-full h-[50px]'>
+                <button className="w-[10%] h-[70%] text-white bg-blue-600 rounded-3xl ">
+                    Submit
+                </button>
             </div>
         </div>
     )
