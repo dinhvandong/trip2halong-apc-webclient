@@ -45,9 +45,9 @@ const YourProperty = () => {
         </div>
       </div>
       <div className="p-4">
-        <div className="flex flex-col justify-center items-center w-full space-y-3 pt-10 ">
+        <div className="flex flex-col justify-center items-center w-full space-y-3 pt-2 ">
           <div className="flex justify-center items-center ">
-            <img className="w-[15%] rounded-full" src={logoAmba} alt="" />
+            <img className="w-[10%] rounded-full" src={logoAmba} alt="" />
           </div>
           <div className="text-4xl">
             <span className="font-bold">Ambassador Cruise</span>
@@ -61,14 +61,14 @@ const YourProperty = () => {
           <div className='bg-[#104672] text-white font-semibold rounded-full py-2 px-2'>
             <button
               className={`${activeTab === 'account' ? 'bg-[#167DC8]' : 'hover:bg-[#167DC8]'
-                } px-10 py-3 rounded-full mr-1 transition duration-300 `}
+                } px-8 py-2 rounded-full mr-1 transition duration-300 `}
               onClick={() => setActiveTab('account')}
             >
               Account
             </button>
             <button
               className={`${activeTab === 'information' ? 'bg-[#167DC8]' : 'hover:bg-[#167DC8]'
-                } px-10 py-3 rounded-full ml-1 transition duration-300 `}
+                } px-8 py-2 rounded-full ml-1 transition duration-300 `}
               onClick={() => setActiveTab('information')}
             >
               Information

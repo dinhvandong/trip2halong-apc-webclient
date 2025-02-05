@@ -30,6 +30,7 @@ import ToanUpdate from './pages/ToanUpdate';
 
 import SidebarAdmin from './components/admin/SidebarAdmin'
 import Activity2 from './pages/admin/Activity2'
+import ProFilePage from './pages/ProFilePage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -43,6 +44,8 @@ const App = () => {
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-in-enter-code/:email" element={<SignInEnterCode />} />
         <Route path="/sign-in-with-email-password" element={<SignInEmailandPassword />} />
+
+        <Route path="/profile" element={<ProFilePage />} />
 
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/reset" element={<ResetPage />} />
