@@ -13,6 +13,9 @@ const Header = () => {
   const gotoBooking = () =>{
     navigate('/booking');
   }
+  const gotoProfile = () =>{
+    navigate('/profile');
+  }
   const gotoSignIn = () =>{
     navigate('/sign-in')
   }
@@ -37,7 +40,7 @@ const Header = () => {
       <button onClick={gotoList} className="text-white font-semibold text-lg h-[60%] w-full  md:w-[20%] border rounded-full border-white mr-6">List Your Property</button>
       <button><RiRefund2Line className="mr-2 text-3xl text-white"/></button>
       <button><img src={usa} className="mr-2 scale-75 "/></button>
-      <button onClick={gotoSignIn}><PiUserCircleLight className="text-3xl text-white "/></button>
+      <button onClick={gotoProfile}><PiUserCircleLight className="text-3xl text-white "/></button>
       </div>
 
   </header>
