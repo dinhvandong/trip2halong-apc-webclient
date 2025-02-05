@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 
@@ -85,12 +87,12 @@ const InformationTab = () => {
   }
   return (
     <div className='mx-4 '>
-      <div className='bg-[#F9F9F9] flex flex-row px-7 pb-6 pt-7 rounded-xl' >
-        <div className='flex-1'>
-          <h3 className='font-semibold text-lg'>information</h3>
+      <div className='bg-[#F9F9F9] px-7 pb-4 pt-3 rounded-xl' >
+        <div className='flex-1 ml-3'> 
+          <h3 className='font-semibold text-lg'>Information</h3>
           <p className='text-[#ADB1B2]'>*Please use English character only</p>
         </div>
-        <div className='flex-1'>
+        <div className='flex-1 mt-3'>
           <div className='flex-1'>
             <h5 className='ml-3 font-medium text-sm'>Property Name<span className='text-red-500'>*</span></h5>
             <input className='w-full py-2 px-3 mt-1 font-medium rounded-md inset-shadow-2xs  focus:outline-none rounded-l-md' type="text" />
