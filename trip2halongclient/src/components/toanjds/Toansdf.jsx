@@ -59,7 +59,7 @@ const Toansdf = () => {
 
 
     return (
-        <div className='flex flex-col items-center w-full h-auto bg-gray-300 '>
+        <div className='flex flex-col items-center w-full h-auto bg-[#F4F4F4] '>
             <div className='flex items-center justify-center w-[80%] h-[100px]'>
                 <div className="relative w-[70%] h-auto">
 

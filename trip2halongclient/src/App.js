@@ -27,6 +27,7 @@ import BookingsPage from './pages/admin/BookingsPage'
 import RequestPage from './pages/admin/RequestPage'
 import Longg from './components/hello/Longg';
 import ToanUpdate from './pages/ToanUpdate';
+import All from './components/listYourProperty/All';
 
 import SidebarAdmin from './components/admin/SidebarAdmin'
 import Activity2 from './pages/admin/Activity2'
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/news" element={<AllNew/>}/>
         <Route path="/booking-payment" element={<Longg/>}/>
         <Route path="/booking-process" element={<ToanUpdate/>}/>
+        <Route path="/listYourProperty" element={<All/>}/>
         
         <Route path="/" element={<HomePage/>}/>
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />

@@ -88,9 +88,6 @@ const FullAll = () => {
                     Submit
                 </button>
             </div>
-
-
-
         </div>
     )
 }

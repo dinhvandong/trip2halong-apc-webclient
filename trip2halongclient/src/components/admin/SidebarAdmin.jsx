@@ -25,6 +25,10 @@ const SidebarAdmin = (props) => {
   function gotoRequest() {
     navigate("/admin/request");
   }
+  function gotoHome() {
+    navigate("/home");
+  }
+
 
   const tab = props.menu;
   const styleMenu1 =
@@ -38,11 +42,11 @@ const SidebarAdmin = (props) => {
   const styleMenu5 =
     tab === "tab5" ? "bg-[#167DC8] hover:bg-[#167DC8]" : "hover:bg-[#0E5385]";
   return (
-    <div className="flex flex-col justify-start items-start h-full p-4 w-full">
-      <div className="flex justify-center items-center p-2 w-full">
-        <img className="w-[60%]" src={logo} alt="" />
+    <div className="flex flex-col items-start justify-start w-full h-full p-4">
+      <div className="flex items-center justify-center w-full p-2">
+        <img onClick={gotoHome} className="w-[60%]" src={logo} alt="" />
       </div>
-      <div className="flex flex-col justify-start items-start space-y-2">
+      <div className="flex flex-col items-start justify-start space-y-2">
         <div
           onClick={gotoDashboard}
           className={`flex flex-row justify-start items-center text-white space-x-4 p-2 ${styleMenu1} rounded-md w-full px-4 cursor-pointer `}
