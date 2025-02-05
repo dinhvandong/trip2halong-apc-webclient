@@ -1,28 +1,28 @@
 import React, { useState } from 'react'
 import { FiChevronDown } from "react-icons/fi";
+import Check2 from './Check2';
+import Check3 from './Check3';
+import TransportationForm from './TransportationForm';
 
 const YouPacDet = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [description, setDescription] = useState("");
     const [selected, setSelected] = useState("Halong Bay Day Cruise");
     const options = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-    const [selected2, setSelected2] = useState({});
+    const [selectedOptions, setSelectedOptions] = useState([]);
 
-    const data = [
-        ["8-hour day-tour", "Onboard meals", "Aftermoon tes", "Tea/coffee demonstration"],
-        ["Complimentary kayaking", "Complimentary bamboo boat", "Option 7", "Option 8"],
-        ["Option 9", "Option 10", "Option 11", "Option 12"],
-        ["Option 13", "Option 14", "Option 15", "Option 16"],
+    const option = [
+        { category: "", items: ["8-hour day tour", "Onboard accommodation", "Sightseeing fees", "Swimming pool"] },
+        { category: "", items: ["Entrance fees", "Onboard insurance", "Service fees", "Tips"] },
+        { category: "", items: ["Spa/massage", "Luxury Kayaking", "Spa/massage treatment", "Butler service"] },
+        { category: "", items: ["butler service", "Onboard insurance", "Others"] },
     ];
 
-    const toggleCheckbox = (option) => {
-        setSelected2((prev) => {
-            const updatedState = { ...prev, [option]: !prev[option] };
-            console.log("Selected options:", updatedState);
-            return updatedState;
-        });
+    const handleCheckboxChange = (category, item) => {
+        setSelectedOptions((prev) =>
+            prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+        );
     };
-
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -39,8 +39,8 @@ const YouPacDet = () => {
 
 
     return (
-        <div className='w-full h-auto p-2 bg-white'>
-            <div className='w-full h-auto bg-[#F9F9F9] flex flex-col p-3 rounded-md'>
+        <div className='w-full h-auto p-3 bg-white'>
+            <div className='w-full h-auto bg-[#F9F9F9] flex flex-col p-4 rounded-md'>
                 <p className='text-2xl font-bold'>Your Package Details</p>
                 <div className="relative w-full mt-4">
                     <p className='ml-4 text-black font-semibold text-[15px] '>Selete Category<span className='text-red-600'>*</span></p>
@@ -95,34 +95,35 @@ const YouPacDet = () => {
                         onChange={handleInputChange}
                     ></textarea>
                 </div>
-                <div className="w-full h-auto p-2">
-                    {data.map((row, rowIndex) => (
-                        <div key={rowIndex} className="flex justify-between space-x-4">
-                            {row.map((option) => (
-                                <label
-                                    key={option}
-                                    className="flex items-center cursor-pointer"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        checked={selected2[option] || false}
-                                        onChange={() => toggleCheckbox(option)} // Gọi hàm toggle khi click
-                                        className="hidden"
-                                    />
-                                    <div
-                                        className={`w-5 h-5 border-2 rounded-md flex items-center justify-center transition-colors ${selected2[option]
-                                                ? "bg-blue-500 border-blue-500"
-                                                : "bg-white border-gray-400"
-                                            }`}
-                                    >
-                                        {selected2[option] && <span className="text-sm text-white">✔</span>}
-                                    </div>
-                                    <span>{option}</span>
-                                </label>
-                            ))}
+                <div className="w-full h-auto p-3 rounded-lg">
+                    <p className='text-[15px]  text-black font-medium'>Highights<span className='text-red-500'>*</span></p>
+                    {option.map((group, index) => (
+                        <div key={index} className="mb-4">
+                            <p className="font-medium text-md">{group.category}</p>
+                            <div className="grid grid-cols-2 gap-2 mt-2 md:grid-cols-4">
+                                {group.items.map((item, idx) => (
+                                    <label key={idx} className="flex items-center space-x-2 font-medium">
+                                        <input
+                                            type="checkbox"
+                                            checked={selectedOptions.includes(item)}
+                                            onChange={() => handleCheckboxChange(group.category, item)}
+                                            className="w-4 h-4"
+                                        />
+                                        <span>{item}</span>
+                                    </label>
+                                ))}
+                            </div>
                         </div>
                     ))}
+
                 </div>
+                <div className='flex justify-end w-full h-auto'>
+                    <input className='w-[50%] h-[40px] px-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md hover:text-black  text-gray-300' placeholder='Please describe your package' type='Please insert your Google Map Link'></input>
+                </div>
+                <Check2/>
+                <Check3/>
+                <TransportationForm/>
+
 
 
 

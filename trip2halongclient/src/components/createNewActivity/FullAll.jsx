@@ -2,9 +2,15 @@ import React, { useState } from 'react'
 import { FiSearch } from "react-icons/fi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import YouPacDet from './YouPacDet';
+import MediaCenter from './MediaCenter';
 
 const FullAll = () => {
-     const [activeTab, setActiveTab] = useState('account');
+    const [activeTab, setActiveTab] = useState('account');
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
     return (
         <div className='flex flex-col w-[80%] h-auto bg-white rounded-md'>
             <div className="flex flex-row justify-between items-center bg-[#F9F9F9] w-full rounded-t-md border-b-2 p-4">
@@ -59,12 +65,30 @@ const FullAll = () => {
                                 } px-8 py-3 rounded-full ml-1 transition duration-300 `}
                             onClick={() => setActiveTab('information')}
                         >
-                           Pricing Strategy
+                            Pricing Strategy
                         </button>
                     </div>
                 </div>
             </div>
-            <YouPacDet/>
+            <YouPacDet />
+            <MediaCenter />
+            <div className='w-full h-[60px] flex items-center p-6'>
+                <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                        className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring focus:ring-blue-300"
+                    />
+                    <span className="text-gray-700">I hereby confrim that the provided information is accurate and give myconsert to proceed with the package.</span>
+                </label>
+            </div>
+            <div className='flex justify-center w-full h-[50px]'>
+                <button className="w-[10%] h-[70%] text-white bg-blue-600 rounded-3xl ">
+                    Submit
+                </button>
+            </div>
+
 
 
         </div>
