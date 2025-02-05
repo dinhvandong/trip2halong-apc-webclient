@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/trip2halong-apc-webclient/static/css/main.6f06679f.css",
+    "main.js": "/trip2halong-apc-webclient/static/js/main.a1137f72.js",
+    "static/js/488.ca07196b.chunk.js": "/trip2halong-apc-webclient/static/js/488.ca07196b.chunk.js",
+    "static/media/logoAMBA.webp": "/trip2halong-apc-webclient/static/media/logoAMBA.4d3e2729bab6feac4ff8.webp",
+    "static/media/halong2.jpg": "/trip2halong-apc-webclient/static/media/halong2.4fc39f37717883932bcd.jpg",
+    "static/media/halong1.jpg": "/trip2halong-apc-webclient/static/media/halong1.55c22ce0f6b8199e18bd.jpg",
+    "static/media/logotriphalong.jpg": "/trip2halong-apc-webclient/static/media/logotriphalong.2e9b728d9eda2e7aa97f.jpg",
+    "static/media/halong_trip_logo.png": "/trip2halong-apc-webclient/static/media/halong_trip_logo.6c1716fc6cc05071332f.png",
+    "static/media/trip_logo.png": "/trip2halong-apc-webclient/static/media/trip_logo.6c1716fc6cc05071332f.png",
+    "static/media/avatar.png": "/trip2halong-apc-webclient/static/media/avatar.8886f25603634d5d4923.png",
+    "index.html": "/trip2halong-apc-webclient/index.html",
+    "main.6f06679f.css.map": "/trip2halong-apc-webclient/static/css/main.6f06679f.css.map",
+    "main.a1137f72.js.map": "/trip2halong-apc-webclient/static/js/main.a1137f72.js.map",
+    "488.ca07196b.chunk.js.map": "/trip2halong-apc-webclient/static/js/488.ca07196b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f06679f.css",
+    "static/js/main.a1137f72.js"
+  ]
+}
