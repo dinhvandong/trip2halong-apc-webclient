@@ -32,6 +32,7 @@ import All from './components/listYourProperty/All';
 import SidebarAdmin from './components/admin/SidebarAdmin'
 import Activity2 from './pages/admin/Activity2'
 import ProFilePage from './pages/ProFilePage'
+import BrandPage from './pages/BrandPage'
 // import Duc from './components/Duc/Duc'
 
 
@@ -47,6 +48,8 @@ const App = () => {
         <Route path="/sign-in-with-email-password" element={<SignInEmailandPassword />} />
 
         <Route path="/profile" element={<ProFilePage />} />
+
+        <Route path="/brand" element={<BrandPage />} />
 
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/reset" element={<ResetPage />} />
