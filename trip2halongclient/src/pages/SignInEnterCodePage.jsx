@@ -2,8 +2,8 @@ import React from 'react'
 import Duc from '../components/Duc'
 import Header from '../components/kien/Header'
 import Footer from '../components/vulong/Footer'
-import SignInForm from '../components/dung/SignInForm'
-import HaiLongEnterCode from '../components/hailong/HaiLongEnterCode'
+import SignInForm from '../components/signFrom/SignInForm'
+import HaiLongEnterCode from '../components/signInCreate/HaiLongEnterCode'
 import { useParams } from 'react-router-dom'
 
 const SignInEnterCodePage = () => {

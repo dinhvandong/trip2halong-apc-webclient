@@ -3,7 +3,7 @@ import Header from '../components/kien/Header';
 import Kien from '../components/kien/Kien';
 import Toansdf from '../components/toanjds/Toansdf';
 import Footer from '../components/vulong/Footer';
-import Long from '../components/hello/Longg';
+import Long from '../components/booking3/Longg';
 
 const ToanUpdate = () => {
   return (

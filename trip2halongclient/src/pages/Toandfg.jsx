@@ -1,5 +1,5 @@
 import React from 'react'
-import Longg from '../components/hello/Longg';
+import Longg from '../components/booking3/Longg';
 import Header from '../components/kien/Header';
 import Kien from '../components/kien/Kien';
 import Toansdf from '../components/toanjds/Toansdf';

@@ -25,7 +25,7 @@ import PropertyPage from './pages/admin/PropertyPage'
 import ActivityPage from './pages/admin/ActivityPage'
 import BookingsPage from './pages/admin/BookingsPage'
 import RequestPage from './pages/admin/RequestPage'
-import Longg from './components/hello/Longg';
+import Longg from './components/booking3/Longg';
 import ToanUpdate from './pages/ToanUpdate';
 import All from './components/listYourProperty/All';
 

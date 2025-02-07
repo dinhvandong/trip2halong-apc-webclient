@@ -1,8 +1,8 @@
-const API_URL = 'https://trip-api.delimart.com.vn/api/home/trending/public/getAll?page=0&size=20&lang=en';
+import { API_URL } from "./api";
 
 const trendingData = async () => {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/api/home/trending/public/getAll?page=0&size=20&lang=en`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -14,3 +14,5 @@ const trendingData = async () => {
       }
 }
 export default trendingData;
+
+// const API_URL = 'https://trip-api.delimart.com.vn/api/home/trending/public/getAll?page=0&size=20&lang=en';
