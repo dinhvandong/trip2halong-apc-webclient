@@ -3,9 +3,9 @@ import Longg1 from './Longg1'
 import Longg2 from './Longg2'
 import Longg3 from './Longg3'
 import Longg4 from './Longg4'
-import Header from '../kien/Header';
-import Kien from '../kien/Kien';
-import Footer from '../vulong/Footer';
+import Header from '../header/Header';
+import Kien from '../header/Kien';
+import Footer from '../footer/Footer';
 
 const Longg = () => {
     return (

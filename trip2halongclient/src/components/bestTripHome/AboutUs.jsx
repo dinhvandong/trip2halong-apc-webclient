@@ -1,7 +1,7 @@
 import React from 'react'
 import halong1 from './assets/halong1.jpg';
 import halong2 from './assets/halong2.jpg';
-import logo from '../vulong/assets/logotriphalong.jpg';
+import logo from '../../assets/logo.png';
 
 
 import { TfiEye } from "react-icons/tfi";
@@ -12,7 +12,7 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 const AboutUs = () => {
   return (
     <div className='mt-48 flex flex-col items-center w-full h-auto  bg-[#F4F5F5]'>
-      <p className='font-bold text-5xl py-12 '>About us</p>
+      <p className='py-12 text-5xl font-bold '>About us</p>
 
       <div class="grid grid-cols-2 w-full  ">
         {/* Top Left Section - Our Mission */}
@@ -31,14 +31,14 @@ const AboutUs = () => {
         <div class="bg-cover bg-center" >
           <img src={halong2}
           alt='halong2'
-          className='h-full w-full object-cover'/>
+          className='object-cover w-full h-full'/>
          </div>
 
         {/* Bottom Left Section - Image */}
         <div class="bg-cover bg-center" >
           <img src={halong2}
           alt='halong2'
-          className='h-full w-full object-cover'/>
+          className='object-cover w-full h-full'/>
          </div>
 
         {/* Bottom Right Section - Our Vision */}
@@ -106,7 +106,7 @@ const AboutUs = () => {
       <div className='flex w-[80%] h-auto  bg-white'>
         <div className='flex flex-col w-[30%] mt-16 ml-11'>
           <p className='font-bold text-[43px] text-[#2A85C0] '>WHAT WE SELL</p>
-          <div className='leading-6 mt-4 pb-16'>
+          <div className='pb-16 mt-4 leading-6'>
           <p className='font-medium text-[18px] text-[#425E7A] '>
             Trip2halong offers a comprehensive 
           </p>
@@ -135,7 +135,7 @@ const AboutUs = () => {
            <img 
           src={halong1} 
           alt="halong1" 
-          className="w-full h-full object-cover" 
+          className="object-cover w-full h-full" 
           />
         </div>      
       </div>

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 // import Header from "./Header";
 import { fetchImages } from "../apis/banner_api";
-import Header from "./kien/Header";
+import Header from "./header/Header";
 
 const TopBanner = () => {
   const [images, setImages] = useState([]);

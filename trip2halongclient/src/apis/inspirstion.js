@@ -1,8 +1,9 @@
+import { API_URL } from './api';
 import axios from 'axios';
 
 export const inspirationData = async () => {
     try {
-        const response = await axios.get('https://trip-api.delimart.com.vn/api/home/inspiration/public/getAll?page=0&size=20&lang=en');
+        const response = await axios.get(`${API_URL}/api/home/inspiration/public/getAll?page=0&size=20&lang=en`);
 
         // Kiểm tra trạng thái HTTP và dữ liệu trả về
         if (response.status === 200 && response.data?.code === 200) {
@@ -23,3 +24,5 @@ export const inspirationData = async () => {
         return [];
     }
 };
+
+// https://trip-api.delimart.com.vn/api/home/inspiration/public/getAll?page=0&size=20&lang=en

@@ -1,10 +1,10 @@
 import React from 'react'
-import Reset from '../components/kien/Reset'
-import Kien from '../components/kien/Kien'
-import VuLong from '../components/vulong/VuLong'
-import Header from '../components/kien/Header'
-import Footer from '../components/vulong/Footer'
-import CreateAccount from '../components/huy/CreateAccount/CreateAccount'
+import Reset from '../components/header/Reset'
+import Kien from '../components/header/Kien'
+import VuLong from '../components/footer/VuLong'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
+import CreateAccount from '../components/yourTripHome/CreateAccount/CreateAccount'
 
 const CreateAccountPage = () => {
   return (

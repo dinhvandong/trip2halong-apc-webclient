@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from '../components/kien/Header';
-import Kien from '../components/kien/Kien';
-import Toansdf from '../components/toanjds/Toansdf';
-import Footer from '../components/vulong/Footer';
-import Long from '../components/hello/Longg';
+import Header from '../components/header/Header';
+import Kien from '../components/header/Kien';
+import Toansdf from '../components/trendingInfor/Toansdf';
+import Footer from '../components/footer/Footer';
+import Long from '../components/booking3/Booking3All';
 
 const ToanUpdate = () => {
   return (

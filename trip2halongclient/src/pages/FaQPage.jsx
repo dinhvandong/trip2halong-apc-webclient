@@ -1,11 +1,11 @@
 import React from 'react'
-import VuLong from '../components/vulong/VuLong'
-import Kien from '../components/kien/Kien'
-import Huy from '../components/huy/Huy'
-import AboutUs from '../components/quan/AboutUs'
-import HaiLong from '../components/vulong/HaiLong'
-import Footer from '../components/vulong/Footer'
-import FaQ from '../components/FaQ'
+import VuLong from '../components/footer/VuLong'
+import Kien from '../components/header/Kien'
+import Huy from '../components/yourTripHome/Huy'
+import AboutUs from '../components/bestTripHome/AboutUs'
+import HaiLong from '../components/footer/HaiLong'
+import Footer from '../components/footer/Footer'
+import FaQ from '../components/footer/FaQ'
 
 const FaQPage = () => {
   return (

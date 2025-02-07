@@ -1,14 +1,14 @@
 import React from 'react'
-import Kien from '../components/kien/Kien'
-import VuLong from '../components/vulong/VuLong'
-import Duc from '../components/duc/Duc'
-import Header from '../components/kien/Header'
-import Footer from '../components/vulong/Footer'
-import VuLongForgot from '../components/vulong/VuLongForgot'
+import Kien from '../components/header/Kien'
+import VuLong from '../components/footer/VuLong'
+import Duc from '../components/footer/Singgin'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
+import VuLongForgot from '../components/footer/VuLongForgot'
 
 const ForgotPasswordPage = () => {
   return (
-    <div className='w-full flex flex-col'>
+    <div className='flex flex-col w-full'>
         <Header/>
         <VuLongForgot/>
         <Footer/>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Toan from './Toan';
-import Toan2 from './Toan2';
+import Toan from './AllFrom';
+import Toan2 from './AllFrom2';
 
 const MainComponent = () => {
   const [viewMode, setViewMode] = useState('list');

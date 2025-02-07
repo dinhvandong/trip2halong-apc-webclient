@@ -1,6 +1,6 @@
 import React from 'react'
 import SidebarAdmin from '../../components/admin/SidebarAdmin';
-import Statac2 from '../../components/activitymy/Statac2';
+import Statac2 from '../../components/activity2/Statac2';
 
 const Activity2 = () => {
   return (

@@ -17,7 +17,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-white">
+    <div className="min-h-screen bg-white">
       <div className="max-w-md px-4 mx-auto mt-[100px]">
         <h1 className="mb-2 text-2xl font-semibold text-center text-gray-700">
           Sign in your account

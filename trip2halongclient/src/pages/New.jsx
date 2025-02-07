@@ -1,7 +1,7 @@
 import React from 'react'
-import Kien from '../components/kien/Kien';
-import Huy from '../components/huy/Huy';
-import Footer from '../components/vulong/Footer';
+import Kien from '../components/header/Kien';
+import Huy from '../components/yourTripHome/Huy';
+import Footer from '../components/footer/Footer';
 
 const New = () => {
   return (
