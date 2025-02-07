@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { requestOtp } from "../apis/login_api";
+import { requestOtp } from "../../apis/login_api";
 
 const Duc = () => {
 

@@ -1,11 +1,11 @@
 import React from 'react'
-import Kien from '../components/kien/Kien'
-import VuLong from '../components/vulong/VuLong'
-import Header from '../components/kien/Header'
-import Footer from '../components/vulong/Footer'
-import Toan2 from '../components/toan/Toan2'
-import Toan from '../components/toan/Toan'
-import MainComponent from '../components/toan/MainComponent'
+import Kien from '../components/header/Kien'
+import VuLong from '../components/footer/VuLong'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
+import Toan2 from '../components/booking/AllFrom2'
+import Toan from '../components/booking/AllFrom'
+import MainComponent from '../components/booking/MainComponent'
 
 const BookingPage = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import Duc from '../components/Duc'
-import Header from '../components/kien/Header'
-import Footer from '../components/vulong/Footer'
+import Duc from '../components/footer/Singgin'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
 import { useParams } from 'react-router-dom'
 
 const SignInPage = () => {

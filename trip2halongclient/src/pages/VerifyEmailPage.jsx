@@ -1,9 +1,9 @@
 import React from 'react'
-import Kien from '../components/kien/Kien'
-import VuLong from '../components/vulong/VuLong'
+import Kien from '../components/header/Kien'
+import VuLong from '../components/footer/VuLong'
 import Duc from '../components/Duc'
-import Header from '../components/kien/Header'
-import Footer from '../components/vulong/Footer'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
 
 const VerifyEmailPage = () => {
   return (

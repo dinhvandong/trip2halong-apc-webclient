@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/kien/Header'
-import Footer from '../components/vulong/Footer'
-import ProFile from '../components/huy/ProFile/ProFile'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
+import ProFile from '../components/yourTripHome/ProFile/ProFile'
 
 const ProFilePage = () => {
   return (

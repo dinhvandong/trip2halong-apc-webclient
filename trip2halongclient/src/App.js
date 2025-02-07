@@ -1,9 +1,9 @@
 import React from 'react'
-import Kien from './components/kien/Kien'
-import Huy from './components/huy/CreateAccount/CreateAccount'
-import Quan from './components/quan/Quan'
-import VuLong from './components/vulong/VuLong'
-import Toanbo from './components/Toanbobo/TrendingHome'
+import Kien from './components/header/Kien'
+import Huy from './components/yourTripHome/CreateAccount/CreateAccount'
+import Quan from './components/bestTripHome/Quan'
+import VuLong from './components/footer/VuLong'
+import Toanbo from './components/trendingHome/TrendingHome'
 import HomePage from './pages/HomePage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SignUpPage from './pages/SignUpPage'
@@ -14,7 +14,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import SignInEnterCode from './pages/SignInEnterCodePage'
 import CreateAccountPage from './pages/CreateAccountPage'
-import MainComponent from './components/toan/MainComponent'
+import MainComponent from './components/booking/MainComponent'
 import SignInPage from './pages/SignInPage'
 import SignInEmailandPassword from './pages/SignInEmailandPassword'
 import FaQPage from './pages/FaQPage'
@@ -25,7 +25,7 @@ import PropertyPage from './pages/admin/PropertyPage'
 import ActivityPage from './pages/admin/ActivityPage'
 import BookingsPage from './pages/admin/BookingsPage'
 import RequestPage from './pages/admin/RequestPage'
-import Longg from './components/booking3/Longg';
+import Longg from './components/booking3/Booking3All';
 import ToanUpdate from './pages/ToanUpdate';
 import All from './components/listYourProperty/All';
 
