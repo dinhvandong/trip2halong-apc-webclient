@@ -10,8 +10,8 @@ const BrandPage = () => {
         <div className='flex flex-col '>
         <Kien />
         <Huy />
-        <Brand/>
-        <Footer />
+        <Brand />
+        <Footer/>
     </div>
       )
 }

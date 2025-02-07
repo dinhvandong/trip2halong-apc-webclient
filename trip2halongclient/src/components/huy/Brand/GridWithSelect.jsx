@@ -5,7 +5,7 @@ import StarRat from "./StarRat";
 
 
 
-const GridWithSelect = () => {
+const GridWithSelect = ({ currentIndex }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [rows] = useState(4); // Default rows per page
@@ -30,43 +30,25 @@ const GridWithSelect = () => {
     return <div>Error: {error}</div>;
   }
 
-  const totalPages = Math.ceil(data.length / rows);
 
   // Get data for the current page
   const paginatedData = data.slice((currentPage - 1) * rows, currentPage * rows);
 
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      const slideDirection = page > currentPage ? "right" : "left";
-      setDirection(slideDirection);
-      setIsSliding(true); // Start sliding
 
-      setTimeout(() => {
-        setCurrentPage(page); // Update the page
-        setIsSliding(false); // Reset sliding after animation
-      }, 300); // Duration of the sliding animation
-    }
-  };
 
-  
   return (
-    <div className="bg-gray-100 ">
-      {/* Grid Container with Slide Effect */}
-      <div
-        className={`relative overflow-hidden`}
-      >
+    <div className="bg-gray-100">
+      <div className="relative flex flex-row mr-3 overflow-hidden w-full h-[350px] rounded-md">
         <div
-          className={`flex gap-6 transition-transform duration-300 transform ${isSliding
-              ? direction === "right"
-                ? "translate-x-full"
-                : "-translate-x-full"
-              : "translate-x-0"
-            }`}
+          className="flex w-full h-full transition-transform duration-300"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
         >
           {paginatedData.map((item) => (
             <div
               key={item.id}
-              className="relative flex flex-col h-[340px] w-[350px] mx-auto mt-6 shadow-xl rounded-xl"
+              className="relative flex flex-col h-[340px] mx-2 w-[350px] mx-auto flex-shrink-0 shadow-xl rounded-xl"
             >
               <div className="h-[55%] w-full relative">
                 <img
@@ -93,44 +75,6 @@ const GridWithSelect = () => {
             </div>
           ))}
         </div>
-      </div>
-
-
-      {/* Pagination Controls */}
-      <div className="flex items-center justify-center mt-6">
-        {/* Left Arrow */}
-        <button
-          className="px-3 py-1 text-sm bg-gray-300 hover:bg-gray-400 rounded-l-md"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          &lt;
-        </button>
-
-        {/* Page Numbers */}
-        <div className="flex px-4 space-x-2">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              className={`px-3 py-1 text-sm rounded-md ${currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 hover:bg-gray-300"
-                }`}
-              onClick={() => handlePageChange(index + 1)}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
-
-        {/* Right Arrow */}
-        <button
-          className="px-3 py-1 text-sm bg-gray-300 hover:bg-gray-400 rounded-r-md"
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          &gt;
-        </button>
       </div>
     </div>
   );
