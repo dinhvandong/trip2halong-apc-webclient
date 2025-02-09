@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://dinhvandong.github.io/trip2halong-apc-webclient/",
-
   "dependencies": {
     "antd": "^5.22.7",
     "axios": "^1.7.9",

@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 import { FiSearch } from "react-icons/fi";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import YouPacDet from './YouPacDet';
-import MediaCenter from './MediaCenter';
 import { useNavigate } from 'react-router-dom';
+import Flexcibal from './Flexcibal';
 
-const FullAll = () => {
-    const navigation = useNavigate();
-    const gotopricing = () => {
-        navigation('/admin/activity/pricing')
+
+const PricingFull = () => {
+    const navigate = useNavigate();
+    const backacti = () => {
+        navigate('/admin/activity')
     }
-    const backtoactiity = () => {
-        navigation('/admin/activity')
-    }
-    
-    const [activeTab, setActiveTab] = useState('account');
+
+    const [activeTab, setActiveTab] = useState();
     const [isChecked, setIsChecked] = useState(false);
 
     const handleCheckboxChange = () => {
@@ -65,40 +62,24 @@ const FullAll = () => {
                         <button
                             className={`${activeTab === 'account' ? 'bg-[#167DC8]' : 'hover:bg-[#167DC8]'
                                 } px-8 py-3 rounded-full mr-1 transition duration-300 `}
-                            onClick={() => backtoactiity('/admin/activity')}
+                            onClick={() => backacti('/admin/activity')}
                         >
                             Packege Information
                         </button>
                         <button
                             className={`${activeTab === 'information' ? 'bg-[#167DC8]' : 'hover:bg-[#167DC8]'
                                 } px-8 py-3 rounded-full ml-1 transition duration-300 `}
-                            onClick={() => gotopricing('/admin/activity/pricing')}
+                            onClick={() => setActiveTab('information')}
                         >
                             Pricing Strategy
                         </button>
                     </div>
                 </div>
             </div>
-            <YouPacDet />
-            <MediaCenter />
-            <div className='w-full h-[60px] flex items-center p-6'>
-                <label className="flex items-center space-x-2 cursor-pointer">
-                    <input
-                        type="checkbox"
-                        checked={isChecked}
-                        onChange={handleCheckboxChange}
-                        className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring focus:ring-blue-300"
-                    />
-                    <span className="text-gray-700">I hereby confrim that the provided information is accurate and give myconsert to proceed with the package.</span>
-                </label>
-            </div>
-            <div className='flex justify-center w-full h-[50px]'>
-                <button className="w-[10%] h-[70%] text-white bg-blue-600 rounded-3xl ">
-                    Submit
-                </button>
-            </div>
+            <Flexcibal/>
+
         </div>
     )
 }
 
-export default FullAll
+export default PricingFull

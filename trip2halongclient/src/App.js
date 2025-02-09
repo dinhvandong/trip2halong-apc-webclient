@@ -28,6 +28,7 @@ import RequestPage from './pages/admin/RequestPage'
 import Longg from './components/booking3/Booking3All';
 import ToanUpdate from './pages/ToanUpdate';
 import All from './components/listYourProperty/All';
+import PricingActivity from 'pages/admin/PricingActivity';
 
 import SidebarAdmin from './components/admin/SidebarAdmin'
 import Activity2 from './pages/admin/Activity2'
@@ -70,6 +71,7 @@ const App = () => {
         <Route path="/admin/bookings" element={<BookingsPage/>} />
         <Route path="/admin/request" element={<RequestPage />} />
         <Route path="/activity/activity2" element={<Activity2 />} />
+        <Route path="/admin/activity/pricing" element={<PricingActivity />} />
 
       </Routes>
     </BrowserRouter>
