@@ -19,7 +19,7 @@ const DropdownButton = ({ options, defaultValue, onSelect }) => {
     {/* Nút chính */}
     <button
       onClick={toggleDropdown}
-      className="flex items-center justify-between w-full px-4 py-2 font-bold bg-white border border-gray-300 rounded-md hover:border-green-400 focus:outline-none"
+      className="flex items-center justify-between w-full px-4 py-2 font-sans bg-white border border-gray-300 rounded-md hover:border-green-400 focus:outline-none"
     >
       <span>{selectedOption}</span>
       <CgChevronDown className="ml-2" />

@@ -59,8 +59,8 @@ const Toansdf = () => {
 
 
     return (
-        <div className='flex flex-col items-center w-full h-auto bg-[#F4F4F4] '>
-            <div className='flex items-center justify-center w-[80%] h-[100px]'>
+        <div className='flex flex-col items-center w-full h-auto bg-[#F2F4F4] '>
+            <div className='flex items-center justify-center  w-[80%] h-[200px]'>
                 <div className="relative w-[70%] h-auto">
 
                     <div className="absolute left-0 w-full h-1 bg-[#EAEEEF] top-4"></div>
@@ -70,7 +70,7 @@ const Toansdf = () => {
                         style={{ width: `${progressWidths[currentStep - 1]}%`, left: `${(currentStep - 1) * (100 / (steps.length - 1))}%` }}
                     ></div>
 
-          
+
                     <div className="relative flex justify-between mt-1.5">
                         {steps.map((step) => (
                             <div key={step.id} className="flex flex-col items-center w-1/3">
@@ -124,7 +124,7 @@ const Toansdf = () => {
                                         {/* Nút chính */}
                                         <button
                                             onClick={toggleDropdown}
-                                            className="flex items-center w-full h-full font-bold bg-gray-200 rounded-l focus:outline-none"
+                                            className="flex items-center w-full h-full font-medium bg-gray-200 rounded-l focus:outline-none"
                                         >
                                             <span className="flex items-center gap-2">
                                                 {selectedOption.icon} {selectedOption.label}
@@ -175,8 +175,8 @@ const Toansdf = () => {
                                     </div>
                                     <input
                                         type="text"
-                                        placeholder="Nhập nội dung"
-                                        className="border border-gray-300 rounded-r w-[80%] h-full font-bold focus:outline-none"
+                                        placeholder="038888888"
+                                        className="border border-gray-300 px-2 rounded-r w-[80%] h-full font-sans focus:outline-none"
                                     />
                                 </div>
 
@@ -185,14 +185,14 @@ const Toansdf = () => {
                                 <p className='text-[15px] text-black font-medium mt-3'>Full Name<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
-                                    placeholder="Nhập nội dung"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-bold focus:outline-none"
+                                    placeholder="Name"
+                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
                                 />
                                 <p className='text-[15px] text-black font-medium mt-3'>Email<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
-                                    placeholder="Nhập nội dung"
-                                    className="border border-gray-300 rounded-md w-full h-[40px] font-bold focus:outline-none"
+                                    placeholder="Email"
+                                    className="border border-gray-300 rounded-md w-full h-[40px] font-sans px-2 focus:outline-none"
                                 />
                             </div>
                         </div>
@@ -216,8 +216,8 @@ const Toansdf = () => {
                                 <p className='text-[15px] text-black font-medium mt-2'>Full Name<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
-                                    placeholder="Nhập nội dung"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-bold focus:outline-none"
+                                    placeholder="Full Name"
+                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
                                 />
                             </div>
                         </div>
@@ -234,8 +234,8 @@ const Toansdf = () => {
                                 <p className='text-[15px] text-black font-medium'>ID/Passport No.<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
-                                    placeholder="Nhập nội dung"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-bold focus:outline-none"
+                                    placeholder="ID/Pass"
+                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
                                 />
                             </div>
                             <div className='flex flex-col w-1/3 h-auto ml-2'>
@@ -264,8 +264,8 @@ const Toansdf = () => {
                                 <p className='text-[15px] text-black font-medium mt-2'>Full Name<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
-                                    placeholder="Nhập nội dung"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-bold focus:outline-none"
+                                    placeholder="Full Name"
+                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
                                 />
                             </div>
                         </div>
@@ -282,8 +282,8 @@ const Toansdf = () => {
                                 <p className='text-[15px] text-black font-medium'>ID/Passport No.<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
-                                    placeholder="Nhập nội dung"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-bold focus:outline-none"
+                                    placeholder="ID/Pass"
+                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
                                 />
                             </div>
                             <div className='flex flex-col w-1/3 h-auto ml-2'>

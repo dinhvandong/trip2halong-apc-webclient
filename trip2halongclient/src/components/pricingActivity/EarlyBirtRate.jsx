@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import CustomDatePicker from './CustomDatePicker'
 import { FiChevronDown } from "react-icons/fi";
@@ -6,7 +5,9 @@ import { FiChevronRight } from "react-icons/fi";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronUp } from "react-icons/fi";
 
-const Flexcibal = () => {
+
+
+const EarlyBirtRate = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState(null);
     const [price, setPrice] = useState("");
@@ -50,12 +51,10 @@ const Flexcibal = () => {
         const value2 = e.target.value.replace(/\D/g, "");
         setPrice2(value2);
     };
-
-
     return (
         <div className='flex w-full h-auto p-3 bg-white'>
             <div className='w-full h-auto bg-[#FAFAFA] flex flex-col p-4 rounded-md'>
-                <p className='text-2xl font-bold'>Flexible Rate</p>
+                <p className='text-2xl font-bold'>Early Bird Rate</p>
                 <div className='flex flex-row justify-between w-full h-auto mt-2'>
                     <p className='text-[15px] font-medium text-gray-800 leading-none'>Guests can cancle their reservation without any penalties, provided the cancellation is made at least 24 hours befoe the scheduled<br />
                         departure.
@@ -112,9 +111,9 @@ const Flexcibal = () => {
                                         <div
                                             key={index}
                                             className={`flex items-center justify-center w-10 h-10 p-5 ml-4 rounded-full cursor-pointer
-                                                ${isCurrentDay ? ' border-2 border-blue-500' : ''} 
-                                                ${isSelected ? 'bg-[#187DCA] hover:text-white' : ''}
-                                                 ${isCurrentDay || isSelected ? 'rounded-full' : ''}`}
+                                                       ${isCurrentDay ? ' border-2 border-blue-500' : ''} 
+                                                       ${isSelected ? 'bg-[#187DCA] hover:text-white' : ''}
+                                                        ${isCurrentDay || isSelected ? 'rounded-full' : ''}`}
                                             onClick={() => handleSelectDate(date.getDate())}
                                         >
                                             {date.getDate()}
@@ -189,7 +188,7 @@ const Flexcibal = () => {
                                 placeholder='70 %'
                                 className="w-16 p-2 font-sans text-center placeholder-black border rounded-md"
                             />
-                           
+
                         </div>
 
                         <div className="flex items-center gap-2">
@@ -199,10 +198,10 @@ const Flexcibal = () => {
                                 // name="firstInfant"
                                 // value={rates.firstInfant}
                                 // onChange={handleChange}
-                               placeholder='0 %'
+                                placeholder='0 %'
                                 className="w-16 p-2 font-sans text-center placeholder-black border rounded-md"
                             />
-                           
+
                         </div>
 
                         <div className="flex items-center gap-2">
@@ -212,10 +211,10 @@ const Flexcibal = () => {
                                 // name="secondInfant"
                                 // value={rates.secondInfant}
                                 // onChange={handleChange}
-                               placeholder='70 %'
+                                placeholder='70 %'
                                 className="w-16 p-2 font-sans text-center placeholder-black border rounded-md"
                             />
-                           
+
                         </div>
                     </div>
                 </div>
@@ -235,7 +234,7 @@ const Flexcibal = () => {
                             <p className='text-[15px]'>Selling Price:<span className='text-[#187DCA] font-bold'>20,000,000 VND</span></p>
                         </div>
                     </div>
-                    <FiChevronUp/>
+                    <FiChevronUp />
                 </div>
                 <div className='w-full h-[1px] bg-gray-200 mt-4'></div>
                 <div className='flex justify-end w-full mt-3'>
@@ -248,4 +247,4 @@ const Flexcibal = () => {
     )
 }
 
-export default Flexcibal
+export default EarlyBirtRate
