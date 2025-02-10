@@ -1,6 +1,6 @@
 import axios from 'axios'; 
+import { API_URL } from "./api";
 
-const API_URL =`https://trip-api.delimart.com.vn`
 
 export const requestOtp = async (email) => {
     try {
