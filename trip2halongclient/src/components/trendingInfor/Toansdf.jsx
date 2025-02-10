@@ -105,11 +105,11 @@ const Toansdf = () => {
             </div>
             <div className='w-[80%] h-max flex flex-row mb-3'>
                 <div className='w-[70%] h-auto flex flex-col'>
-                    <div className='flex flex-col w-full h-auto p-4 bg-white rounded-md'>
-                        <p className='text-black text-[20px] flex flex-col font-bold'>Contract Information
-                            <span className='text-[15px] font-bold text-gray-500'>Please fill your Contact information</span>
+                    <div className='flex flex-col w-full h-auto p-4 bg-white rounded-md shadow-sm'>
+                        <p className='text-black text-[20px] font-bold leading-none'>Contract Information<br />
+                            <span className='text-[15px] font-normal text-gray-400'>Please fill your Contact information</span>
                         </p>
-                        <div className='w-full h-[1px] bg-gray-300 mt-3'></div>
+                        <div className='w-full h-[1px] bg-gray-200 mt-3'></div>
                         <div className='flex flex-row w-full h-auto'>
                             <div className='flex flex-col w-1/2 h-auto pl-2' >
                                 <p className='text-[15px] text-black font-medium mt-3'>Title<span className='text-red-600'>*</span></p>
@@ -124,7 +124,7 @@ const Toansdf = () => {
                                         {/* Nút chính */}
                                         <button
                                             onClick={toggleDropdown}
-                                            className="flex items-center w-full h-full font-medium bg-gray-200 rounded-l focus:outline-none"
+                                            className="flex items-center w-full h-full font-medium bg-[#F2F4F4] rounded-l focus:outline-none"
                                         >
                                             <span className="flex items-center gap-2">
                                                 {selectedOption.icon} {selectedOption.label}
@@ -134,7 +134,7 @@ const Toansdf = () => {
 
                                         {/* Dropdown menu */}
                                         {isOpen && (
-                                            <div className="absolute left-0 z-10 w-32 mt-2 bg-white border border-gray-300 rounded-md shadow-lg">
+                                            <div className="absolute left-0 z-10 w-32 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
                                                 <ul className="py-1">
                                                     <li
                                                         onClick={() =>
@@ -176,7 +176,7 @@ const Toansdf = () => {
                                     <input
                                         type="text"
                                         placeholder="038888888"
-                                        className="border border-gray-300 px-2 rounded-r w-[80%] h-full font-sans focus:outline-none"
+                                        className="border border-[#F2F4F4] px-2 rounded-r w-[80%] h-full font-sans hover:border-blue-500 focus:outline-none"
                                     />
                                 </div>
 
@@ -186,22 +186,45 @@ const Toansdf = () => {
                                 <input
                                     type="text"
                                     placeholder="Name"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
+                                    className="border border-[#F2F4F4] rounded-md w-full h-[42px] font-sans px-2 hover:border-blue-500 focus:outline-none"
                                 />
                                 <p className='text-[15px] text-black font-medium mt-3'>Email<span className='text-red-600'>*</span></p>
                                 <input
                                     type="text"
                                     placeholder="Email"
-                                    className="border border-gray-300 rounded-md w-full h-[40px] font-sans px-2 focus:outline-none"
+                                    className="border border-[#F2F4F4] rounded-md w-full h-[40px] font-sans hover:border-blue-500 px-2 focus:outline-none"
                                 />
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col w-full h-auto p-4 mt-3 bg-white rounded-md'>
-                        <p className='text-black text-[20px] flex flex-col font-bold'>Passenger Information
-                            <span className='text-[15px] font-bold text-gray-500'>Please fill in your Passenger information</span>
+                    <div className='flex flex-col w-full h-auto p-4 mt-3 bg-white rounded-md shadow-sm'>
+                        <p className='text-black text-[20px] font-bold leading-none ml-2'>Transfer service information<br />
+                            <span className='text-[15px] font-normal text-gray-400'>Please fill in the address for your round trips transfer service</span>
                         </p>
-                        <div className='w-full h-[1px] bg-gray-300 mt-3'></div>
+                        <div className='flex flex-row justify-between w-full h-auto mt-4 '>
+                            <div className='w-[49%] h-auto flex flex-col'>
+                                <p className='text-[15px] text-black font-medium ml-2'>Pick-up</p>
+                                <input
+                                    type="text"
+                                    placeholder="49 Hai Ba Trung"
+                                    className="border border-[#F2F4F4] mt-2 rounded-md w-full h-[42px] font-sans px-2 hover:border-blue-500 focus:outline-none"
+                                />
+                            </div>
+                            <div className='w-[49%] h-auto flex flex-col'>
+                                <p className='text-[15px] text-black font-medium ml-2'>Drop-up</p>
+                                <input
+                                    type="text"
+                                    placeholder="49 Hai Ba Trung"
+                                    className="border border-[#F2F4F4] mt-2 rounded-md w-full h-[42px] font-sans px-2 hover:border-blue-500 focus:outline-none"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex flex-col w-full h-auto p-4 mt-4 mb-3 bg-white rounded-md'>
+                        <p className='text-black text-[20px] font-bold leading-none'>Passenger Information<br />
+                            <span className='text-[15px] font-normal text-gray-400'>Please fill in your Passenger information</span>
+                        </p>
+                        <div className='w-full h-[1px] bg-gray-200 mt-3'></div>
                         <p className='text-blue-500 text-[20px] font-bold mt-2'>Passenger 1</p>
                         <div className='flex flex-row w-full h-auto'>
                             <div className='flex flex-col w-1/2 h-auto p-2 bg-white'>
@@ -217,7 +240,7 @@ const Toansdf = () => {
                                 <input
                                     type="text"
                                     placeholder="Full Name"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
+                                    className="border border-[#F2F4F4] rounded-md w-full h-[42px] font-sans px-2 hover:border-blue-500 focus:outline-none"
                                 />
                             </div>
                         </div>
@@ -235,7 +258,7 @@ const Toansdf = () => {
                                 <input
                                     type="text"
                                     placeholder="ID/Pass"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
+                                    className="border border-[#F2F4F4] rounded-md w-full h-[42px] font-sans px-2 hover:border-blue-500 focus:outline-none"
                                 />
                             </div>
                             <div className='flex flex-col w-1/3 h-auto ml-2'>
@@ -249,7 +272,7 @@ const Toansdf = () => {
 
 
                         </div>
-                        <div className='w-full h-[1px] bg-gray-300 mt-3'></div>
+                        <div className='w-full h-[1px] bg-gray-200 mt-3'></div>
                         <p className='text-blue-500 text-[20px] font-bold mt-2'>Passenger 2</p>
                         <div className='flex flex-row w-full h-auto'>
                             <div className='flex flex-col w-1/2 h-auto p-2 bg-white'>
@@ -265,7 +288,7 @@ const Toansdf = () => {
                                 <input
                                     type="text"
                                     placeholder="Full Name"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
+                                    className="border border-[#F2F4F4] rounded-md w-full h-[42px] hover:border-blue-500 font-sans px-2 focus:outline-none"
                                 />
                             </div>
                         </div>
@@ -283,7 +306,7 @@ const Toansdf = () => {
                                 <input
                                     type="text"
                                     placeholder="ID/Pass"
-                                    className="border border-gray-300 rounded-md w-full h-[42px] font-sans px-2 focus:outline-none"
+                                    className="border border-[#F2F4F4] rounded-md w-full h-[42px] font-sans px-2 hover:border-blue-500 focus:outline-none"
                                 />
                             </div>
                             <div className='flex flex-col w-1/3 h-auto ml-2'>
@@ -297,7 +320,7 @@ const Toansdf = () => {
 
 
                         </div>
-                        <div className='w-full h-[1px] bg-gray-300 mt-3'></div>
+                        <div className='w-full h-[1px] bg-gray-200 mt-3'></div>
                         <div className="w-full h-auto p-4">
                             <div className="flex items-center mb-2">
                                 <input
