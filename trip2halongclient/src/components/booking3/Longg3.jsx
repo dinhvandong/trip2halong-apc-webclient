@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import CabinCard from './CabinCard'
 import Pesletor from './Pesletor';
 import RateOption from './RateOption';
+import { FiChevronDown } from "react-icons/fi";
 
 const Longg3 = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
     // const [quantities, setQuantities] = useState([0, 0, 0]);
     // const prices = [40, 60, 100]; // Giá các sản phẩm
@@ -27,8 +29,30 @@ const Longg3 = () => {
         <div className='flex bg-[#F2F2F2] w-full h-auto justify-center items-start flex-row '>
             <div className='flex flex-col bg-white w-[55%] h-auto rounded-md mt-4'>
                 <CabinCard />
-                <Pesletor/>
-                <RateOption/>
+                <Pesletor />
+                <RateOption />
+                <div className="w-full h-auto p-6">
+                    {/* Button */}
+                    <button
+                        className="w-full h-[50px] text-[#167DC8] text-xl font-bold bg-white flex justify-center items-center rounded-3xl border border-[#167DC8] relative"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        View more Cabins & Rates
+                        <FiChevronDown
+                            className={`ml-3 text-black transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"
+                                }`}
+                        />
+                    </button>
+
+                    {/* Dropdown Content */}
+                    {isOpen && (
+                        <div className="p-4 mt-3 bg-white border border-gray-300 rounded-lg shadow-lg">
+                            <p className="py-2 border-b cursor-pointer hover:bg-[#e4f1fc]">🏡 Cabin Type 1 - $100/night</p>
+                            <p className="py-2 border-b cursor-pointer hover:bg-[#e4f1fc]">🏕️ Cabin Type 2 - $120/night</p>
+                            <p className="py-2 cursor-pointer hover:bg-[#e4f1fc]">🌲 Cabin Type 3 - $150/night</p>
+                        </div>
+                    )}
+                </div>
             </div>
             <div className='w-[25%] ml-4'></div>
 

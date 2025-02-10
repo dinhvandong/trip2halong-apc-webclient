@@ -12,7 +12,7 @@ const MainComponent = () => {
   const [viewMode, setViewMode] = useState('list');
 
   const gotonext = () => {
-    navigate('/booking-process');
+    navigate('/booking-payment');
   };
 
 
