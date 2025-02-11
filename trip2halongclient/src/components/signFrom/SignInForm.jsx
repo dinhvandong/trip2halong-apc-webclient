@@ -1,19 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { login } from "../../apis/login_api";
+import { useLocation } from "react-router-dom";
 
 const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   navigate('/home')
+
+  //   // Handle sign in logic here
+  // };
+
+  useEffect(() => {
+    if (location.state?.email) {
+      setEmail(location.state.email);
+    }
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      navigate("/profile");
+    }
+  }, [navigate], [location.state]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage("Đang xử lý...");
 
-    navigate('/home')
-
-    // Handle sign in logic here
+    try {
+      const data = await login(email, password);
+      setMessage("Đăng nhập thành công!");
+      localStorage.setItem("authToken", data.result);
+      localStorage.setItem("userInfo", JSON.stringify(data.extra.userInfo[0]));
+      localStorage.setItem("userRole", JSON.stringify(data.extra.role));
+      console.log(data.result)
+      navigate("/profile");
+    } catch (error) {
+      setMessage(error.message || "Đăng nhập thất bại");
+    }
   };
 
   return (
@@ -37,6 +68,7 @@ const SignInForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="yourname@example.com"
+                readOnly
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -46,14 +78,15 @@ const SignInForm = () => {
               <label className="block mb-2 text-gray-700">
                 Password<span className="text-red-500">*</span>
               </label>
-              <div className="relative"> 
+              <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                   placeholder="Your Password"
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
+                 
                 />
                 <button
                   type="button"
@@ -77,6 +110,7 @@ const SignInForm = () => {
             >
               Sign In
             </button>
+            {message && <p className="mt-4 text-center text-red-500">{message}</p>}
           </div>
         </form>
 

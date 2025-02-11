@@ -84,3 +84,20 @@ export const signupUser = async (data) => {
     throw error;
   }
 }
+
+export async function login(email, password) {
+  const response = await fetch(`${API_URL}/api/auth/signin`, {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Đăng nhập thất bại");
+  }
+
+  return response.json();
+}

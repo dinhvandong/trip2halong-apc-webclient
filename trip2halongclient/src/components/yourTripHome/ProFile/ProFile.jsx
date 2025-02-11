@@ -5,6 +5,7 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa6";
 import { CgDanger } from "react-icons/cg";
 import avatar from "../../../assets/avatar.png";
+import { useNavigate } from "react-router-dom";
 
 
 const ProFile = () => {
@@ -13,6 +14,9 @@ const ProFile = () => {
     const [CountryValue, setCountryValue] = useState('');
     const [file, setFile] = useState(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const navigate = useNavigate();
+    const [userData, setUserData] = useState(null);
+    const [userRole, setUserRole] = useState([]);
     const [showPassword, setShowPassword] = useState({
         current: false,
         new: false,
@@ -30,6 +34,20 @@ const ProFile = () => {
     });
 
     useEffect(() => {
+        // lay du lieu nguoi dung
+        const token = localStorage.getItem("authToken");
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+        const role = JSON.parse(localStorage.getItem("userRole"));
+        console.log("User Info từ localStorage:", userInfo);
+        console.log("User Role từ localStorage:", role);
+
+        if (!token) {
+            navigate("/login");
+        } else {
+            setUserData(userInfo);
+            setUserRole(role);
+            
+        }
         // Fetch danh sách quốc gia từ REST Countries API
         fetch("https://restcountries.com/v3.1/all")
             .then((response) => response.json())
@@ -42,7 +60,7 @@ const ProFile = () => {
                 setLoading(false);
             })
             .catch((error) => console.error("Error fetching countries:", error));
-    }, []);
+    }, [], [navigate]);
 
 
     if (loading) {
@@ -76,11 +94,18 @@ const ProFile = () => {
             [field]: !prev[field],
         }));
     };
+
+    const handleLogout = () => {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("userInfo");
+        localStorage.removeItem("userRole");
+        navigate("/home");
+    };
     return (
         <div className='my-20 grid grid-cols-4 gap-4 md:max-w-[90%] w-full m-auto '>
             <div className='col-span-1  shadow-md bg-white rounded-lg h-[290px]'>
                 <div className='flex my-3 px-5'>
-                    <img className='w-[60px] h-[60px] rounded-full' src={avatar} alt='anh' />
+                    <img className='w-[60px] h-[60px] rounded-full' src={userData.avatar} alt='anh' />
                     <div className='ml-3 '>
                         <h3 className='font-bold text-xl text-[#454849]'>Chunie Nguyen</h3>
                         <p className='text-xs font-medium p-1 text-center text-white bg-[#7a8588] rounded-xl'>Trip2Halong Account</p>
@@ -94,7 +119,7 @@ const ProFile = () => {
                 </div>
                 <hr />
                 <div className='flex flex-col items-start px-2 my-2'>
-                    <button className='font-medium text-base hover:text-white hover:bg-[#167DC8] w-full h-10 text-left pl-3 transition duration-300 rounded-lg'>
+                    <button  onClick={handleLogout} className='font-medium text-base hover:text-white hover:bg-[#167DC8] w-full h-10 text-left pl-3 transition duration-300 rounded-lg'>
                         Log Out
                     </button>
                 </div>
@@ -193,7 +218,7 @@ const ProFile = () => {
                                     <input
 
                                         name="phoneNumber"
-
+                                        
                                         className="shadow-inner w-full text-sm py-2 px-1 pl-2 "
                                         placeholder="012 345 6789"
                                     />
@@ -204,7 +229,7 @@ const ProFile = () => {
                                 <h5 className='text-[13px] font-semibold mb-2 mt-1'>Email<span className='text-red-500'>*</span></h5>
                                 <input
                                     name="email"
-
+                                        value= {userData.email}
                                     className='shadow-inner  w-full text-sm py-2 px-1 pl-2' placeholder='huy12520@gmail.com' />
                             </div>
 
@@ -452,7 +477,7 @@ const ProFile = () => {
                         <h1 className='text-xl font-bold text-[#454849]'>Delete Account</h1>
                         <p className='text-[#ADB1B2]'>Once your account is deleted, you will not be able to restore your account or data</p>
                     </div>
-                    <button className='mt-5 px-7 py-3 rounded-lg mr-1 bg-red-500 text-white font-medium text-lg hover:bg-red-800 transition duration-300 flex items-center'><CgDanger className='text-lg mr-3'/> Delete Account</button>
+                    <button className='mt-5 px-7 py-3 rounded-lg mr-1 bg-red-500 text-white font-medium text-lg hover:bg-red-800 transition duration-300 flex items-center'><CgDanger className='text-lg mr-3' /> Delete Account</button>
                 </div>
             </div>
         </div>

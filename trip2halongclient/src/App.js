@@ -5,7 +5,7 @@ import Quan from './components/bestTripHome/Quan'
 import VuLong from './components/footer/VuLong'
 import Toanbo from './components/trendingHome/TrendingHome'
 import HomePage from './pages/HomePage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import SignUpPage from './pages/SignUpPage'
 import ResetPage from './pages/ResetPage'
 import BookingPage from './pages/BookingPage'
@@ -37,6 +37,10 @@ import BrandPage from 'pages/BrandPage'
 
 
 const App = () => {
+  function ProtectedRoute({ children }) {
+    const token = localStorage.getItem("authToken");
+    return token ? children : <Navigate to="/sign-in" />;
+  }
   return (
     <BrowserRouter>
       <Routes>
@@ -47,7 +51,16 @@ const App = () => {
         <Route path="/sign-in-enter-code/:email" element={<SignInEnterCode />} />
         <Route path="/sign-in-with-email-password" element={<SignInEmailandPassword />} />
 
-        <Route path="/profile" element={<ProFilePage />} />
+        {/* <Route path="/profile" element={<ProFilePage />} /> */}
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <ProFilePage />
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/brand" element={<BrandPage />} />
 
         <Route path="/booking" element={<BookingPage />} />
@@ -55,12 +68,12 @@ const App = () => {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FaQPage />} />
-        <Route path="/news" element={<AllNew/>}/>
-        <Route path="/booking-payment" element={<Longg/>}/>
-        <Route path="/booking-process" element={<ToanUpdate/>}/>
-        <Route path="/listYourProperty" element={<All/>}/>
-        
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/news" element={<AllNew />} />
+        <Route path="/booking-payment" element={<Longg />} />
+        <Route path="/booking-process" element={<ToanUpdate />} />
+        <Route path="/listYourProperty" element={<All />} />
+
+        <Route path="/" element={<HomePage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
@@ -69,7 +82,7 @@ const App = () => {
         <Route path="/admin/dashboard" element={<AdminPage />} />
         <Route path="/admin/property" element={<PropertyPage />} />
         <Route path="/admin/activity" element={<ActivityPage />} />
-        <Route path="/admin/bookings" element={<BookingsPage/>} />
+        <Route path="/admin/bookings" element={<BookingsPage />} />
         <Route path="/admin/request" element={<RequestPage />} />
         <Route path="/activity/activity2" element={<Activity2 />} />
 
