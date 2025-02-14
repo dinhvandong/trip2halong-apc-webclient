@@ -11,9 +11,9 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const Longg2 = () => {
     return (
-        <div className='flex bg-[#F4F4F4] w-full h-[1010px] px-28 space-x-5 '>
-            <div className='flex flex-col justify-start items-start bg-white w-[68%] h-full rounded-lg'>
-                <h1 className='px-5 py-2 text-3xl font-bold text-[#505556]'>Ambassador Day Cruise 8-hour Day Tour</h1>
+        <div className='flex bg-[#F2F2F2] w-full h-auto justify-center items-start flex-row shadow-sm'>
+            <div className='flex flex-col justify-start items-start bg-white w-[55%] h-auto rounded-lg p-3'>
+                <h1 className='px-5 py-2 text-3xl font-bold text-[#505556]'>Ambassador Cruise | 2-day-1-night-Tour</h1>
                 <div className='flex items-center'  >
                     <FaLocationArrow
                         style={{
@@ -63,56 +63,51 @@ const Longg2 = () => {
                 </div>
                 <p className='px-5 text-[#505556] text-[18px] font-semibold leading-5 '>Embark on the Best of Halong Bay Day Cuise to discover the beauty of this UNESCO Heritage Wonder in just 8 hours. Enjoy breakfast, a sumptuous buffet lunch, and sunset entertainment while covering all top actractions. </p>
                 <p className='px-5 text-[#505556] text-[18px] font-semibold leading-5 mt-6 '>Elegantly designed, Ambassador Day Cruise features spacious sundecks across two floors with a total area of 324 sqm and 250 sqm, affording 360-degree vistas of Halong Bay and its myriad limestone karsts. Two restaurants, two bars, an entertainment area for live music, and the large open-air Jacuzzi are among the 39-cabin vessel's top-notch facilities. The five- metre glass bridge jutting from the vessel's bow inspires compelling photographs.</p>
-                <div className='w-full h-[150px] bg-white'>
-                <div className='flex w-[950px] h-[160px] px-5 rounded-lg'>
-                    
-                    <div className='flex px-9 py-2 mt-8 font-bold text-xl text-[#167DC8] justify-start items-start  w-[25%] bg-[#F4F4F4] h-full'>
-                        Highlights
-                    </div>
-                    <div className='flex flex-col w-[35%] justify-center items-start gap-7 bg-[#F4F4F4] mt-8 h-full'>
-                        <div className="flex items-center space-x-2">
-                            <RiShipLine className='text-[#167DC8]' />
-                            <span className="text-[#505556]">8 hour Day Tour</span>
+                <div className='w-full h-auto p-2 mt-4'>
+                    <div className='flex w-[99%] h-[160px] px-5 p-3 rounded-md'>
+                        <div className='flex font-bold text-xl p-3 text-[#167DC8] rounded-l-md justify-start items-start w-[20%] bg-[#F4F4F4] h-full'>
+                            Highlights
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <PiGoogleDriveLogoFill className='text-[#167DC8]' />
-                            <span className="text-[#505556]">Entrance & Sightseeing Fees</span>
+                        <div className='flex flex-col w-[30%] justify-center items-start gap-7 bg-[#F4F4F4] h-full'>
+                            <div className="flex items-center space-x-2">
+                                <RiShipLine className='text-[#167DC8]' />
+                                <span className="text-[#505556]">8 hour Day Tour</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <PiGoogleDriveLogoFill className='text-[#167DC8]' />
+                                <span className="text-[#505556]">Entrance & Sightseeing Fees</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <GiMicrophone className='text-[#167DC8]' />
+                                <span className="text-[#505556]">Sunset Entertainment</span>
+                            </div>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <GiMicrophone className='text-[#167DC8]' />
-                            <span className="text-[#505556]">Sunset Entertainment</span>
-                        </div>
-                    </div>
-                    <div className='flex flex-col w-[40%] justify-center items-start gap-7 bg-[#F4F4F4] mt-8 h-full'>
+                        <div className='flex flex-col w-[50%] justify-center items-start rounded-r-md gap-7 p-2 bg-[#F4F4F4] h-full'>
 
-                        <div className="flex items-center space-x-2">
-                            <PiForkKnifeFill className='text-[#167DC8]' />
+                            <div className="flex items-center space-x-2">
+                                <PiForkKnifeFill className='text-[#167DC8]' />
 
-                            <span className="text-[#505556]">Breakfast & Lunch Buffet</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <BsBusFront className='text-[#167DC8]' />
-                            <span className="text-[#505556]">Round-trip Shuttle Bus</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <FaShieldAlt className='text-[#167DC8]' />
-                            <span className="text-[#505556]">Onbroad Insurance, taxex & service charges</span>
+                                <span className="text-[#505556]">Breakfast & Lunch Buffet</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <BsBusFront className='text-[#167DC8]' />
+                                <span className="text-[#505556]">Round-trip Shuttle Bus</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <FaShieldAlt className='text-[#167DC8]' />
+                                <span className="text-[#505556]">Onbroad Insurance, taxex & service charges</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
-
-                <div className='flex'>
-                <button className='bg-[#167DC8] w-[400px] h-[50px] ml-64 rounded-lg flex justify-center items-center text-white font-bold mt-16 gap-3'>
-                    <p>Detailed ltinerary </p>
-                    <MdOutlineKeyboardArrowDown style={{ width: '23px', height: '23px' }} />
+                <div className='flex items-center justify-center w-full h-auto p-2 mt-3'>
+                    <button className='bg-[#167DC8] w-[400px] h-[50px] rounded-lg flex justify-center items-center text-white font-bold gap-3'>
+                        <p>Detailed ltinerary </p>
+                        <MdOutlineKeyboardArrowDown style={{ width: '23px', height: '23px' }} />
                     </button>
                 </div>
             </div>
-            
-
-
-            <div className='flex flex-col bg-white w-[32%] h-[700px] border border-[#A6C3DB]  rounded-lg'>
+            <div className='flex flex-col bg-white w-[25%] ml-4 h-auto border border-[#A6C3DB] rounded-lg'>
                 <h2 className='px-5 py-2 text-2xl font-bold text-[#1D87D2]'>YOUR RESERVATION</h2>
                 <p className='px-5 -mt-2 text-[#505556]'>Ambassador Day Cruise</p>
                 <div className='bg-[#F4F4F4] h-[1px] w-full mt-3'></div>
@@ -135,7 +130,7 @@ const Longg2 = () => {
                     <p className='text-[17px] text-[#505556] font-bold'>Transfer Service</p>
                     <button className='bg-[#EDF4FE] w-[85px] h-[40px] text-[17px] text-[#8CA6C4]'>Included</button>
                 </div>
-                <div className='flex items-start justify-between w-full h-[165px] bg-white'>
+                <div className='flex items-start justify-between w-full h-[165px] '>
                     <div className='flex flex-col w-[30%] gap-14 px-5'>
                         <p className='text-[17px] text-[#505556] font-bold'>Pickup</p>
                         <p className='text-[17px] text-[#505556] font-bold'>Drop-off</p>
@@ -151,12 +146,12 @@ const Longg2 = () => {
                     <p className='text-[17px] text-[#167DC8] font-bold'>USD 280</p>
                 </div>
                 <div className='bg-[#F4F4F4] h-[1px] w-full '></div>
-                <div className='flex flex-col w-full h-[200px] bg-white px-5 py-4'>
+                <div className='flex flex-col w-full h-auto p-4 '>
                     <p className='text-[17px] text-[#505556] font-bold'>Important Notes</p>
                     <p className='text-[17px] text-[#505556] mt-1'>
                         Please refer to the <span className="font-bold underline">Terms & Condition</span>, and <span className="font-bold underline">Privacy Policy</span> by Trip2Halong
                     </p>
-                    <button className='bg-[#167DC8] w-[400px] h-[50px] rounded-lg mt-5 text-white font-bold'>Proceed Payment</button>
+                    <button className='bg-[#167DC8] w-full h-[50px] rounded-lg mt-5 text-white font-bold'>Proceed Payment</button>
                 </div>
             </div>
         </div>

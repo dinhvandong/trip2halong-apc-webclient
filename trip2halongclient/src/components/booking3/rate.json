@@ -1,0 +1,36 @@
+[
+    {
+        "id":1,
+        "name2":"Flexible Rate",
+        "name3":"Amend Your Cruise Date",
+        "name4":"Cruise Cancellation & Refund",
+        "name5":"$350/Cabin",
+        "checked": false,
+        "clickedButton1": false, 
+        "clickedButton2": false
+    },
+    {
+        "id":2,
+        "name2":"Non-Refundable Rate",
+        "name3":"Amend Your Cruise Date",
+        "name4":"Cruise Cancellation & Refund",
+        "name5":"$310/Cabin",
+        "checked": false,
+        "clickedButton1": false, 
+        "clickedButton2": false
+
+    },
+    {
+        "id":3,
+        "name2":"Early Bird Rate",
+        "name3":"Amend Your Cruise Date",
+        "name4":"Cruise Cancellation & Refund",
+        "name5":"$400/Cabin",
+        "nam6":"Hanoi-Halong round",
+        "checked": false,
+        "clickedButton1": false, 
+        "clickedButton2": false, 
+        "clickedButton3": false 
+        
+    }
+]

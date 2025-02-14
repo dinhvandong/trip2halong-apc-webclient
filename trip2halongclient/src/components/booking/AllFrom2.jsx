@@ -12,12 +12,7 @@ import NameWithBreak from './NameWithBreak';
 
 
 const Toan2 = ({ viewMode }) => {
-  const navigate = useNavigate();
-
-  const gotonext = () => {
-    navigate('/booking-process');
-  };
-
+  
   const [value, setValue] = useState(50);
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -59,7 +54,7 @@ const Toan2 = ({ viewMode }) => {
 
 
   return (
-    <div className='relative flex flex-row w-full mb-6 bg-gray-200 px-14 h-max'>
+    <div className='relative flex flex-row w-full mb-6 bg-[#F2F4F4] px-14 h-max'>
       <div className='flex flex-col w-1/4 h-screen mr-4'>
         <div className='w-full h-[160px] flex flex-col p-2 rounded-md bg-white'>
           <button className='flex justify-between font-bold'>Recent Filter<span className='text-blue-400'>Clear</span></button>
@@ -162,14 +157,13 @@ const Toan2 = ({ viewMode }) => {
             <img
               src={tte.thumbnail}
               alt={tte.thumbnail}
-              onClick={gotonext}
               className={`${viewMode === 'grid' ? 'w-full h-[150px] bg-cover bg-center rounded-t-lg' : 'w-auto bg-center h-[230px] rounded-l-lg'
                 }`}
             />
             <div className={`${viewMode === 'grid' ? 'p-2' : 'p-3 flex flex-col'}`}>
               <NameWithBreak name={tte.name}></NameWithBreak>
-                {/* <button className='w-[100px] ml-3 h-[35px] text-[10px] text-yellow-400 bg-yellow-100 border border-yellow-400 rounded-xl'>#1 Best Seller</button> */}
-              
+              {/* <button className='w-[100px] ml-3 h-[35px] text-[10px] text-yellow-400 bg-yellow-100 border border-yellow-400 rounded-xl'>#1 Best Seller</button> */}
+
               <p className='flex flex-row text-[12px] text-blue-400 mt-1'><PiControlFill className='w-4 h-4 text-blue-400'></PiControlFill>Depart from Halong Internation Cruise Port -<span className='ml-1 underline'>Show on map</span></p>
               <div className='flex flex-row items-center mt-2 text-yellow-400' style={{ display: 'flex', gap: '1px' }}>
                 <StarRating rating={Math.round(tte.star)} />
@@ -185,10 +179,13 @@ const Toan2 = ({ viewMode }) => {
               <div className='w-full h-[50%]'></div>
               <p className='text-[20px] text-blue-500 font-bold leading-none'>From $69</p>
               <span className='text-[10px] text-gray-500'>inci. Taxec & Fees</span>
-              <button className='w-[95%] h-[45px] mt-2 bg-blue-700 text-white text-[13px] rounded-lg'>See availability</button>
+              <button className='w-[95%] h-[45px] mt-2 bg-[#187DCA] text-white text-[13px] rounded-lg'>See availability</button>
             </div>
           </div>
         ))}
+        <div className='flex items-center justify-center w-full h-auto mt-4 mb-3'>
+          <button className='px-32 py-3 font-bold text-white rounded-md bg-[#187DCA]'>Explore All</button>
+        </div>
       </div>
     </div >
   );

@@ -11,7 +11,7 @@ const Toan = ({ setViewMode })  => {
   const [isMostPopupla, setMostPopupla] = useState(false);
   const [isTotalPrice, setTotalPrice] = useState(false);
   return (
-    <div className='w-full flex items-center justify-between h-[100px] bg-gray-200 px-16'>
+    <div className='w-full flex items-center justify-between h-[100px] bg-[#F2F4F4] px-16'>
       <p className="text-black text-[25px] flex flex-col leading-none">HaLong Bay Day Cruise<span className="font-bold text-[20px]">20 results found</span></p>
       <div className="w-[35%] h-full flex items-center justify-between flex-row">
         <p className="text-gray-500">Sort by</p>

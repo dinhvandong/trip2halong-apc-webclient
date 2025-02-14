@@ -19,7 +19,7 @@ const DropdownButton = ({ options, defaultValue, onSelect }) => {
     {/* Nút chính */}
     <button
       onClick={toggleDropdown}
-      className="flex items-center justify-between w-full px-4 py-2 font-bold bg-white border border-gray-300 rounded-md hover:border-green-400 focus:outline-none"
+      className="flex items-center justify-between w-full px-4 py-2 font-sans bg-white border border-[#F2F4F4] rounded-md hover:border-blue-500 focus:outline-none"
     >
       <span>{selectedOption}</span>
       <CgChevronDown className="ml-2" />
@@ -27,7 +27,7 @@ const DropdownButton = ({ options, defaultValue, onSelect }) => {
 
     {/* Dropdown menu */}
     {isOpen && (
-      <div className="absolute left-0 z-10 w-32 mt-2 bg-white border border-gray-300 rounded-md shadow-lg">
+      <div className="absolute left-0 z-10 w-32 mt-2 bg-white border border-[#F2F4F4] rounded-md shadow-lg">
         <ul className="py-1">
           {options.map((option, index) => (
             <li
