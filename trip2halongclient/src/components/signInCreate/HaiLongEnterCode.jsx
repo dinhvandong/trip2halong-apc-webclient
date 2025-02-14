@@ -1,11 +1,14 @@
 import React, { useRef, useState } from 'react'
 import { verifyOtp } from "../../apis/login_api";
+import { useNavigate } from 'react-router-dom';
+
 
 const HaiLongEnterCode = ({ email }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const inputs = useRef([]);
+    const navigate = useNavigate();
 
   const handleChange = (value, index) => {
     if (/^\d$/.test(value)) {
@@ -57,6 +60,10 @@ const HaiLongEnterCode = ({ email }) => {
     try {
       const response = await verifyOtp(email, otpValue);
       setMessage(`OTP verified successfully: ${response.message}`);
+      navigate("/sign-in-with-email-password", {
+        state: { email: email },
+      });
+
     } catch (error) {
       setMessage(error.message);
     } finally {
